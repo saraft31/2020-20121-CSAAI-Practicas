@@ -2,18 +2,25 @@ body {
     background-image: url(fondolisa.png);
     background-size: 1500px 1700px;
 
-    padding: 5px;  /* relleno */
-    margin: 10px;  /* Margen */
-    border: solid;
-    border-color: rgb(248, 246, 115);
+    
 }
 
 leftcolumn{
     float: left;
     width: 25%;
-    padding-left: 20px;
+    padding: 25px;
+    /*padding-left: 20px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 20px;*/
+    outline-style: solid;
+    outline-color: rgb(248, 246, 115);
+    outline-offset: -8px;
+}
+
+rightcolumn{
+    float: left;
+    width: 65%;
+    padding: 25px;
     outline-style: solid;
     outline-color: rgb(248, 246, 115);
     outline-offset: -8px;
