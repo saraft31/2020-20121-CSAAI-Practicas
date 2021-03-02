@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(85, 196, 100);
+    color: black;
+  }
+  
+  .migrupo {
+    background-color: yellow;
+    color: green;
+  }
+  
+  p {
+    background-color: orange;
+  }
+/* estilo solo para el parrafo especial*/
+  #especial {
+      background-color: blueviolet;  
+      color:brown;
+    }
