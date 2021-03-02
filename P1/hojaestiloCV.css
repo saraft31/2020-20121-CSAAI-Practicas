@@ -1,0 +1,9 @@
+body {
+    background-image: url(fondolisa.png);
+    background-size: 1300px 1500px;
+
+    padding: 5px;  /* relleno */
+    margin: 10px;  /* Margen */
+    border: solid;
+    border-color: red;
+}
