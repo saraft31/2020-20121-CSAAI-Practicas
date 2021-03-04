@@ -21,6 +21,13 @@ h2 {
 
 }
 
+h1 {
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 2px rgb(160, 10, 10);
+
+}
+
 th{
     background-color: rgba(248, 237, 138, 0.8);
 }
