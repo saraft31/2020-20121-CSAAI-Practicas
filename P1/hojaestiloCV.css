@@ -8,6 +8,15 @@ div {
     background-color: rgba(248, 237, 138, 0.6);
 }
 
+h2 {
+    padding: 10px;
+    outline-style: solid;
+    outline-color: black;
+    outline-offset: -3px;
+    background-color: rgba(142, 210, 255, 0.6);
+
+}
+
 leftcolumn{
     float: left;
     width: 25%;
