@@ -25,7 +25,7 @@ h2 {
 
 h1 {
     font-family: sans-serif;
-    font-size: 60px;
+    font-size: 50px;
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px 2px rgb(255, 238, 0);
 
@@ -57,6 +57,7 @@ rightcolumn{
     float: left;
     width: 65%;
     padding: 25px;
+    padding-top: 2px;
     outline-style: solid;
     outline-color: rgb(248, 246, 115);
     outline-offset: -8px;
