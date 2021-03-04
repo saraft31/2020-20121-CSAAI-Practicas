@@ -5,6 +5,10 @@ body {
     
 }
 div {
+    padding: 10px;
+    outline-style: solid;
+    outline-color: rgb(248, 246, 115);
+    outline-offset: -1px;
     background-color: rgba(248, 237, 138, 0.6);
 }
 
