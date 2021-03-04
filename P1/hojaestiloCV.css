@@ -21,6 +21,14 @@ h2 {
 
 }
 
+th{
+    background-color: rgba(248, 237, 138, 0.8);
+}
+
+.marco1 img{
+    border: 1px solid #000000;
+ }
+
 leftcolumn{
     float: left;
     width: 25%;
