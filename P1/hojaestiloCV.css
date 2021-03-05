@@ -38,8 +38,12 @@ th{
 
 
 .marco1 img{
-    border: 1px solid #000000;
+    border: 1px solid black;
  }
+
+.marco2 iframe{
+    border: 10px solid black
+}
 
 leftcolumn{
     font-family: sans-serif;
