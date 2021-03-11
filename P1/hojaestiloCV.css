@@ -47,7 +47,7 @@ th{
 
 .circular--square {
     border-radius: 50%;
-    border: 5px solid black
+    border: 5px solid rgb(142, 210, 255);
    
   }
 
@@ -68,7 +68,6 @@ rightcolumn{
     float: left;
     width: 65%;
     padding: 25px;
-    padding-top: 2px;
     outline-style: solid;
     outline-color: rgb(248, 246, 115);
     outline-offset: -8px;
