@@ -45,6 +45,12 @@ th{
     border: 10px solid black
 }
 
+.circular--square {
+    border-radius: 50%;
+    border: 5px solid black
+   
+  }
+
 leftcolumn{
     font-family: sans-serif;
     float: left;
