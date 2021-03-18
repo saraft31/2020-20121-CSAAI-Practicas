@@ -19,5 +19,5 @@ const counter = {
 
 //-- Acciones: Ligar el boton al contador
 gui.boton.onclick = () => {
-  counter.inc(1) //incrementa de uno en uno 
+  counter.inc(1) //incrementa de uno en uno si pongo -1 decrementa
 }
