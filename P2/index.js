@@ -3,29 +3,28 @@ console.log("Ejecutando JS...");
 
 // Elementos de la interfaz de la calculadora
 display = document.getElementById("display")
-boton1 = document.getElementById("boton1")
-boton2 = document.getElementById("boton2")
+
 suma = document.getElementById("suma")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 
-//-- Funciones de retrollamada de los botones
-//-- Cada vez que se aprieta un boton se actua
-//-- sobre la cadena: añadiendo digito, operador +
-//-- poniendo a cero o evaluando la expresión
-
 // -- Insertar digitos
-boton1.onclick = () => {
-  display.innerHTML += "1";
+let digitos = document.getElementsByClassName("digito")
+
+for(i=0; i<digitos.length; i++){
+    digitos[i].onclick = (ev) =>{
+        digito(ev.target);
+    }
 }
 
-boton2.onclick = () => {
-  display.innerHTML += "2";
+function digito(button) {
+    if(display.innerHTML=="0"){
+        display.innerHTML = button.id;
+    }else{
+        display.innerHTML += button.id;
+    }
 }
 
-boton3.onclick = () => {
-  display.innerHTML += "3";
-}
 
 //-- Insertar simbolos
 suma.onclick = () => {
