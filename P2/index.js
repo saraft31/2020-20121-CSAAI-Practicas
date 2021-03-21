@@ -14,20 +14,27 @@ clear = document.getElementById("clear")
 //-- sobre la cadena: añadiendo digito, operador +
 //-- poniendo a cero o evaluando la expresión
 
-// -- Insertar digito 1
+// -- Insertar digitos
 boton1.onclick = () => {
   display.innerHTML += "1";
 }
 
-//-- Insertar digito 2
 boton2.onclick = () => {
   display.innerHTML += "2";
 }
 
-//-- Insertar simbolo de sumar
+boton3.onclick = () => {
+  display.innerHTML += "3";
+}
+
+//-- Insertar simbolos
 suma.onclick = () => {
   display.innerHTML += "+";
 }
+
+resta.onclick = () => {
+    display.innerHTML += "-";
+  }
 
 //-- Evaluar la expresion
 igual.onclick = () => {
