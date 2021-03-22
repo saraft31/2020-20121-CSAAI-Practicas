@@ -5,6 +5,7 @@ console.log("Ejecutando JS...");
 display = document.getElementById("display")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
+borra_ultimo = document.getElementById("borra_ultimo")
 
 // -- Insertar digitos
 //-- Crea un array con todos los elementos de la clase cdigito
@@ -70,6 +71,13 @@ function operaciones(operacion){
     }
   }
 
+
+//-- Borra el ultimo digito u operando
+borra_ultimo.onclick = (ev) => {
+    display.innerHTML = display.innerHTML.slice(0,-1);
+    console.log(estado,"borrar digito");
+  }
+  
 //-- Evaluar la expresion
 igual.onclick = () => {
   display.innerHTML = eval(display.innerHTML);
