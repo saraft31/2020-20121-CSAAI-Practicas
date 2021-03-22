@@ -77,7 +77,16 @@ borra_ultimo.onclick = (ev) => {
     display.innerHTML = display.innerHTML.slice(0,-1);
     console.log(estado,"borrar digito");
   }
-  
+
+//-- Poner una coma
+coma.onclick = () => {
+    if(estado == ESTADO.OP1 || estado == ESTADO.OP2_INIT || estado == ESTADO.INIT){
+      display.innerHTML += coma.innerHTML;
+      estado = ESTADO.OPERATION;
+      console.log(`ESTADO ${estado}`);
+    }
+  }
+
 //-- Evaluar la expresion
 igual.onclick = () => {
   display.innerHTML = eval(display.innerHTML);
