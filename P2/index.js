@@ -94,7 +94,8 @@ igual.onclick = () => {
 }
 
 //-- Poner a cero la expresion
-clear.onclick = () => {
+clear.onclick = (ev) => {
   display.innerHTML = "0";
+  estado = ESTADO.INIT;
   console.log(estado,"poner a 0");
 }
