@@ -31,7 +31,7 @@ let estado = ESTADO.INIT;
 for(i=0; i<digitos.length; i++){
     digitos[i].onclick = (ev) =>{
         digito(ev.target.value);
-        console.log('ESTADO ${estado}');
+        console.log(estado, "digito");
     }
 }
 
@@ -39,7 +39,7 @@ for(i=0; i<digitos.length; i++){
 for(i=0; i<operacion.length; i++){
     operacion[i].onclick = (ev) =>{
         operaciones(ev.target.value);
-        console.log('ESTADO ${estado}');
+        console.log(estado, "operacion");
     }
 }
 
@@ -83,16 +83,18 @@ coma.onclick = () => {
     if(estado == ESTADO.OP1 || estado == ESTADO.OP2_INIT || estado == ESTADO.INIT){
       display.innerHTML += coma.innerHTML;
       estado = ESTADO.OPERATION;
-      console.log(`ESTADO ${estado}`);
+      console.log(estado, "poner coma");
     }
   }
 
 //-- Evaluar la expresion
 igual.onclick = () => {
   display.innerHTML = eval(display.innerHTML);
+  console.log(estado,"igual");
 }
 
 //-- Poner a cero la expresion
 clear.onclick = () => {
   display.innerHTML = "0";
+  console.log(estado,"poner a 0");
 }
