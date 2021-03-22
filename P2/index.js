@@ -29,7 +29,7 @@ let estado = ESTADO.INIT;
 // bucle que va leyendo cada digito que se pulsa
 for(i=0; i<digitos.length; i++){
     digitos[i].onclick = (ev) =>{
-        digito(ev.target);
+        digito(ev.target.value);
         console.log('ESTADO ${estado}');
     }
 }
@@ -42,15 +42,33 @@ for(i=0; i<operacion.length; i++){
     }
 }
 
-function digito(button) {
-    if(display.innerHTML=="0"){
-        display.innerHTML = button.value;
-    }else{
-        display.innerHTML += button.value;
+//-- Comprobacion de estado de digitos
+function digito(boton){
+    //-- Segun el estado hacemos una cosa u otra
+    if(estado == ESTADO.INIT){
+      display.innerHTML = boton;
+      estado = ESTADO.OP1;
+    }else if (estado == ESTADO.OP1){
+      display.innerHTML += boton;
+    } else if (estado == ESTADO.OPERATION) {
+      display.innerHTML += boton;
+      estado = ESTADO.OP2_INIT;
+    }else if (estado == ESTADO.OP2_INIT) {
+      display.innerHTML +=  boton;
+      estado = ESTADO.OP2;
+    }else if (estado == ESTADO.OP2){
+      display.innerHTML += boton;
     }
-}
+  }
 
-
+//-- Comprobacion de estado de las operaciones
+function operaciones(operacion){
+    //-- Segun el estado hacemos una cosa u otra
+    if (estado != ESTADO.OPERATION) {
+      display.innerHTML += operacion;
+      estado = ESTADO.OPERATION;
+    }
+  }
 
 //-- Evaluar la expresion
 igual.onclick = () => {
