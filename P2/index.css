@@ -7,15 +7,15 @@ body {
 .Calculadora{
     border: solid;
     border-radius: 10px;
-    width: 500px; /*tamaño cuadrado grande*/
+    width: 450px; /*tamaño cuadrado grande*/
     padding: 30px; /*margenes(distancia al borde)*/
     background-color: rgba(255, 255, 255, 0.842);
-    text-align: center; /*centro*/
+    
     margin: auto; /*centro*/
 }
 
 #display{
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(255, 0, 0, 0.705);
     padding: 15px;
     border: solid;
     border-color: black;
@@ -27,7 +27,8 @@ body {
   }
 
 .teclado{
-    background-color: rgba(163, 143, 233, 0.733);
+    text-align: center; /*centro*/
+    background-color: rgba(252, 240, 77, 0.705);
     padding: 15px;
     border: solid;
     border-color: black;
@@ -35,9 +36,9 @@ body {
 }
 
 button{
-    background-color: rgba(143, 233, 148, 0.733);
-    height: 80px;
-    width: 80px;
+    background-color: rgba(27, 80, 255, 0.705);
+    height: 60px;
+    width: 60px;
     padding: 15px;
     border: solid;
     border-color: black;
