@@ -15,6 +15,20 @@ let digitos = document.getElementsByClassName("digito")
 //-- Crea un array con todos los elementos de la clase operacion
 //let operacion = document.getElementsByClassName("operacion");
 
+//--Estados de la calculadora
+const ESTADO = {
+    INIT: 0,
+    OP1: 1,
+    OPERATION: 2,
+    OP2_INIT: 3,
+    OP2: 4
+};
+
+// variable de estado
+// por defecto el valor es el inicial
+let estado = ESTADO.INIT;
+
+
 
 for(i=0; i<digitos.length; i++){
     digitos[i].onclick = (ev) =>{
