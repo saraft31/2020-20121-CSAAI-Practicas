@@ -3,9 +3,6 @@ console.log("Ejecutando JS...");
 
 // Elementos de la interfaz de la calculadora
 display = document.getElementById("display")
-
-exp = document.getElementById("exp")
-suma = document.getElementById("suma")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 
@@ -13,7 +10,7 @@ clear = document.getElementById("clear")
 //-- Crea un array con todos los elementos de la clase cdigito
 let digitos = document.getElementsByClassName("digito")
 //-- Crea un array con todos los elementos de la clase operacion
-//let operacion = document.getElementsByClassName("operacion");
+let operacion = document.getElementsByClassName("operacion");
 
 //--Estados de la calculadora
 const ESTADO = {
@@ -29,10 +26,19 @@ const ESTADO = {
 let estado = ESTADO.INIT;
 
 
-
+// bucle que va leyendo cada digito que se pulsa
 for(i=0; i<digitos.length; i++){
     digitos[i].onclick = (ev) =>{
         digito(ev.target);
+        console.log('ESTADO ${estado}');
+    }
+}
+
+// bucle que va leyendo cada operación
+for(i=0; i<operacion.length; i++){
+    operacion[i].onclick = (ev) =>{
+        operaciones(ev.target.value);
+        console.log('ESTADO ${estado}');
     }
 }
 
@@ -45,18 +51,6 @@ function digito(button) {
 }
 
 
-//-- Insertar simbolos
-suma.onclick = () => {
-  display.innerHTML += "+";
-}
-
-resta.onclick = () => {
-    display.innerHTML += "-";
-}
-
-exp.onclick = () => {
-    display.innerHTML += "^";
-}
 
 //-- Evaluar la expresion
 igual.onclick = () => {
