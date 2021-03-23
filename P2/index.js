@@ -6,6 +6,7 @@ display = document.getElementById("display")
 igual = document.getElementById("igual")
 clear = document.getElementById("clear")
 borra_ultimo = document.getElementById("borra_ultimo")
+onOFF = document.getElementById("onoff")
 
 // -- Insertar digitos
 //-- Crea un array con todos los elementos de la clase cdigito
@@ -70,6 +71,16 @@ function operaciones(operacion){
       estado = ESTADO.OPERATION;
     }
   }
+
+
+function onoff(){
+  currentvalue = document.getElementById('onoff').value;
+  if(currentvalue == "Off"){
+    onOFF.value="On";
+  }else{
+    onOFF.value="Off";
+  }
+}
 
 
 //-- Borra el ultimo digito u operando
