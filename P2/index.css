@@ -54,3 +54,15 @@ button{
 button:hover{
     background-color: rgb(27, 80, 255);
 }
+
+#clear{
+    background-color: rgb(1, 38, 161);
+}
+
+#borra_ultimo{
+    background-color: rgb(1, 38, 161);
+}
+
+#igual{
+    background-color: rgb(1, 38, 161);
+}
