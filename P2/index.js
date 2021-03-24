@@ -80,6 +80,7 @@ function onoff(){
     onOFF.value="On";
     document.getElementById("display").style.backgroundColor =  "rgba(255, 0, 0, 0.705)";
     display.innerHTML = "0";
+    estado = ESTADO.INIT;
   }else{
     onOFF.value="Off";
     document.getElementById("display").style.backgroundColor = "black";

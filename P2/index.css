@@ -66,3 +66,19 @@ button:hover{
 #igual{
     background-color: rgb(1, 38, 161);
 }
+
+#onoff{
+    float: right;
+    background-color: rgba(27, 80, 255, 0.705);
+    height: 40px;
+    width: 80px;
+    border: solid;
+    border-color: black;
+    border-radius: 5px;
+    margin-left:5.5px;
+    margin-top: 5px;
+    font-weight: bold; 
+    font-family: monospace;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px rgb(80, 80, 80);
+}
