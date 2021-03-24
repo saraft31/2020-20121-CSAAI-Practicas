@@ -75,13 +75,26 @@ function operaciones(operacion){
 
 function onoff(){
   currentvalue = document.getElementById('onoff').value;
+  document.getElementById("display").style.backgroundColor = "black";
   if(currentvalue == "Off"){
     onOFF.value="On";
+    document.getElementById("display").style.backgroundColor =  "rgba(255, 0, 0, 0.705)";
+    display.innerHTML = "0";
   }else{
     onOFF.value="Off";
+    document.getElementById("display").style.backgroundColor = "black";
   }
 }
 
+function play(){
+  currentvalue = document.getElementById('onoff').value;
+  if(currentvalue == "Off"){
+    
+  }
+}
+
+// Poner el display electronicos
+// 
 
 //-- Borra el ultimo digito u operando
 borra_ultimo.onclick = (ev) => {
