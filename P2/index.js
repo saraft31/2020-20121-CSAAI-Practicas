@@ -79,11 +79,13 @@ function onoff(){
   if(currentvalue == "Off"){
     onOFF.value="On";
     document.getElementById("display").style.backgroundColor =  "rgba(255, 0, 0, 0.705)";
+    document.getElementById("onoff").style.backgroundColor = "rgb(27, 80, 255)";
     display.innerHTML = "0";
     estado = ESTADO.INIT;
   }else{
     onOFF.value="Off";
     document.getElementById("display").style.backgroundColor = "black";
+    document.getElementById("onoff").style.backgroundColor = "white";
   }
 }
 

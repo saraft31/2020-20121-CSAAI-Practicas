@@ -1,5 +1,5 @@
 body {
-    background: no-repeat;
+    
     background-image: url(fondo.jpg);
     background-size: cover; 
 }
@@ -69,16 +69,20 @@ button:hover{
 
 #onoff{
     float: right;
-    background-color: rgba(27, 80, 255, 0.705);
+    background-color: white;
     height: 40px;
     width: 80px;
     border: solid;
     border-color: black;
     border-radius: 5px;
     margin-left:5.5px;
-    margin-top: 5px;
+    margin-top: 20px;
     font-weight: bold; 
     font-family: monospace;
     font-size: 20px;
     box-shadow: 2px 2px 5px rgb(80, 80, 80);
+}
+
+#onoff:hover{
+    background-color: rgb(27, 80, 255);
 }
