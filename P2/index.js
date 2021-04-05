@@ -102,17 +102,13 @@ function onoff(){
 
 // Borra el ultimo digito u operando
 borra_ultimo.onclick = (ev) => {
-  if(estado == ESTADO.INIT || currentvalue == "Off" ){
-    display.innerHTML = "0";
-    
-  }else{
-    estado = ESTADO.OPERATION;
-    display.innerHTML = display.innerHTML.slice(0,-1);
-    console.log(estado,"borrar digito");
-    bip.play();
+  if (currentvalue == "On" ){
+      estado = ESTADO.OPERATION;
+      display.innerHTML = display.innerHTML.slice(0,-1);
+      console.log(estado,"borrar digito");
+      bip.play();
   }
-    
-  }
+}
 
 // Poner una coma
 coma.onclick = () => {
