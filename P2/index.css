@@ -1,7 +1,7 @@
 body {
     background: no-repeat;
     background-image: url(fondo.jpg);
-    background-size: cover; 
+    
 }
 
 .Calculadora{
@@ -10,7 +10,6 @@ body {
     width: 450px; /*tamaño cuadrado grande*/
     padding: 30px; /*margenes(distancia al borde)*/
     background-color: rgba(255, 255, 255, 0.842);
-    
     margin: auto; /*centro*/
 }
 
