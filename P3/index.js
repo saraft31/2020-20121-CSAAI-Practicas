@@ -46,10 +46,16 @@ function update()
   }if(ybola <= 10 || ybola >= (canvas.height-10 )) {
     vely = -vely;
   }
-  //-- Actualizar la posición
+  //Actualizar la posición
   xbola = xbola + velx;
   ybola = ybola + vely;
 
+  //rebote raqueta
+  if (xbola >= xtabla && xbola <= (xtabla + 50) && ybola >= (ytabla - 10)) {
+    vely = vely * -1;
+    velx = velx * -1;
+  }
+  
   
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -65,13 +71,12 @@ function update()
 window.onkeydown = (e) => {
     //-- Según la tecla se hace una cosa u otra
     switch (e.key) {
-      case "a":
+      case "4": //izq
         xtabla = xtabla - 20;
-      break;
-  
-      case "d":
+        break;
+      case "6": //drch
         xtabla = xtabla + 20;
-      break;
+        break;
     }
   }
 //-- ¡Que empiece la función!
