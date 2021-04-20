@@ -41,9 +41,9 @@ function update()
   //-- Algoritmo de animacion:
   
   //-- movimiento bola
-  if (xbola < 0 || xbola >= (canvas.width - 20) ) {
+  if (xbola < 10 || xbola >= (canvas.width - 10) ) {
     velx = -velx;
-  }if(ybola <= 0 || ybola > 600) {
+  }if(ybola <= 10 || ybola >= (canvas.height-10 )) {
     vely = -vely;
   }
   //-- Actualizar la posición
@@ -61,5 +61,18 @@ function update()
   requestAnimationFrame(update);
 }
 
+//mover raqueta
+window.onkeydown = (e) => {
+    //-- Según la tecla se hace una cosa u otra
+    switch (e.key) {
+      case "a":
+        xtabla = xtabla - 20;
+      break;
+  
+      case "d":
+        xtabla = xtabla + 20;
+      break;
+    }
+  }
 //-- ¡Que empiece la función!
 update();
