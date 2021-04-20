@@ -1,0 +1,16 @@
+body{
+    background-image: url(fondo4.jpg);
+    
+    
+}
+canvas {
+    
+    background-color: black;
+    opacity: 0.9;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightblue;
+    border-radius: 5px;
+    margin-left: 25%;
+    margin-top: 2%;
+  }
