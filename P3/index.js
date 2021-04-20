@@ -29,7 +29,7 @@ function dibujartabla(){
 function dibujarbola(){
     ctx.beginPath();
     ctx.arc(xbola, ybola, 10, 0, 2 * Math.PI); //dibujar
-    ctx.fillStyle = 'rgb(251, 255, 0)'; //estilo
+    ctx.fillStyle = 'yellow'; //estilo
     ctx.fill(); //relleno
     ctx.stroke() //dibuar el trazo
   ctx.closePath();
@@ -43,7 +43,7 @@ function update()
   //-- movimiento bola
   if (xbola < 0 || xbola >= (canvas.width - 20) ) {
     velx = -velx;
-  }if(ybola <= 0 || ybola > 80) {
+  }if(ybola <= 0 || ybola > 600) {
     vely = -vely;
   }
   //-- Actualizar la posición
