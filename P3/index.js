@@ -51,7 +51,8 @@ function update()
   ybola = ybola + vely;
 
   //rebote raqueta
-  if (xbola >= xtabla && xbola <= (xtabla + 50) && ybola >= (ytabla - 10)) {
+  if (xbola >= xtabla && xbola <= (xtabla + 100) && ybola >= (ytabla - 10) 
+        && ybola <=(ytabla + 75)) {
     vely = vely * -1;
     velx = velx * -1;
   }
