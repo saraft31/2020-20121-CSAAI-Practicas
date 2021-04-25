@@ -74,6 +74,11 @@ function update()
     if (xtabla > 520){
       xtabla = 520;
     }
+    //limete bola por abajo (pierdes)
+    if (ybola > 570){
+      estado = ESTADO.INIT;
+    }
+    
   }
     
   //-- 2) Borrar el canvas
