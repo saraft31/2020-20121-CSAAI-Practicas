@@ -8,7 +8,7 @@ canvas.height = 600;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
-//-- Posición del elemento a animar
+//-- Posiciones iniciales
 let xtabla = 260;
 let ytabla = 550;
 let xbola = 300;
@@ -17,6 +17,16 @@ let ybola = 300;
 //-- Velocidades del objeto(de la bola)
 let velx = 3;
 let vely = 1;
+
+//const Estados
+const ESTADO = {
+  INIT : 0,
+  BEGIN: 1,
+  JUGANDO : 2,
+  FIN : 4,
+  WIN : 5
+}
+let estado = ESTADO.INIT //primer estado el init
 
 function dibujartabla(){
     ctx.beginPath();
@@ -73,6 +83,16 @@ function update()
     dibujarbola()
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
+
+  if (estado == ESTADO.INIT) //defino el estado init
+  {   
+      xbola = 300;
+      ybola = 300;
+      velybola = 0;
+      velxbola = 0;
+      xRaqueta = 260;
+      yRaqueta = 550;
+    }
 }
 
 //mover raqueta
