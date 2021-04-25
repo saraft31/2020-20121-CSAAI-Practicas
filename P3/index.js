@@ -57,6 +57,13 @@ function update()
     velx = velx * -1;
   }
   
+  //Limites raqueta
+  if (xtabla < 0) {
+    xtabla = 0;
+  }
+  if (xtabla > 520){
+    xtabla = 520;
+  }
   
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);

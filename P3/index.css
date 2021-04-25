@@ -7,10 +7,10 @@ body{
     font-family: 'Zrnic';
     src: url("zrnic___.ttf");
 }
-p {
+div {
     color: blanchedalmond;
-    text-align: center;
     font-family: 'Zrnic';
+    margin-top: 2.5%;
     
 }
 canvas {
