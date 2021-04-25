@@ -49,36 +49,37 @@ function update()
 {
     console.log("test");
   //-- Algoritmo de animacion:
-  
-  //-- movimiento bola
-  if (xbola < 10 || xbola >= (canvas.width - 10) ) {
-    velx = -velx;
-  }if(ybola <= 10 || ybola >= (canvas.height-10 )) {
-    vely = -vely;
-  }
-  //Actualizar la posición
-  xbola = xbola + velx;
-  ybola = ybola + vely;
+  if (estado == ESTADO.JUGANDO){
+    //-- movimiento bola
+    if (xbola < 10 || xbola >= (canvas.width - 10) ) {
+      velx = -velx;
+    }if(ybola <= 10 || ybola >= (canvas.height-10 )) {
+      vely = -vely;
+    }
+    //Actualizar la posición
+    xbola = xbola + velx;
+    ybola = ybola + vely;
 
-  //rebote raqueta
-  if (xbola >= xtabla && xbola <= (xtabla + 100) && ybola >= (ytabla - 10) 
-        && ybola <=(ytabla + 75)) {
-    vely = vely * -1;
-    velx = velx * -1;
+    //rebote raqueta
+    if (xbola >= xtabla && xbola <= (xtabla + 100) && ybola >= (ytabla - 10) 
+          && ybola <=(ytabla + 75)) {
+      vely = vely * -1;
+      velx = velx * -1;
+    }
+    
+    //Limites raqueta
+    if (xtabla < 0) {
+      xtabla = 0;
+    }
+    if (xtabla > 520){
+      xtabla = 520;
+    }
   }
-  
-  //Limites raqueta
-  if (xtabla < 0) {
-    xtabla = 0;
-  }
-  if (xtabla > 520){
-    xtabla = 520;
-  }
-  
+    
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
- 
+
     dibujartabla()
     dibujarbola()
   //-- 4) Volver a ejecutar update cuando toque
@@ -105,6 +106,9 @@ window.onkeydown = (e) => {
       case "6": //drch
         xtabla = xtabla + 20;
         break;
+      case " ":
+        estado = ESTADO.JUGANDO;
+      break;
     }
   }
 //-- ¡Que empiece la función!
