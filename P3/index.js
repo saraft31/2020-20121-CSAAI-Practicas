@@ -67,7 +67,7 @@ function dibujarbola(){
     var img = new Image();
     img.src = "bola1.jfif";
     ctx.beginPath();
-    ctx.arc(xbola, ybola, 10, 0, 2 * Math.PI); //dibujar
+    ctx.arc(xbola, ybola, 10, 0, 2 * Math.PI); //dibujar (x,y,tamaño,esquinas,angulo,radio)
     ctx.fillStyle = ctx.createPattern(img, "repeat");; //estilo
     ctx.fill(); //relleno
     ctx.stroke() //dibuar el trazo
@@ -88,8 +88,8 @@ function dibujarladrillos(){
 }
 
 //-- Funcion principal de animacion
-function update()
-{
+function update(){
+
     console.log("test");
   //-- Algoritmo de animacion:
   if (estado == ESTADO.JUGANDO){
@@ -110,18 +110,19 @@ function update()
       velx = velx * -1;
     }
     
-    //Limites raqueta (por los lados)
-    if (xtabla < 0) {
-      xtabla = 0;
-    }
-    if (xtabla > 520){
-      xtabla = 520;
-    }
+    
     //limete bola por abajo (pierdes)
     if (ybola > 570){
       estado = ESTADO.INIT;
     }
-    
+  }//cierro llave de if estado = jugando 
+
+  //Limites raqueta (por los lados)
+  if (xtabla < 0) {
+    xtabla = 0;
+  }
+  if (xtabla > 520){
+    xtabla = 520;
   }
     
   //-- 2) Borrar el canvas
