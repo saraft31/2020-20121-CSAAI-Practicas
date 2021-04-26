@@ -24,7 +24,7 @@ var arraybloques = new Array(filas*columnas);
 var arraycolores = ['rgb(255, 0, 238)', 'rgb(255, 241, 118)' ,'rgb(255, 174, 250)', 'rgb(21, 248, 218)'];
 let b = 0;
 let alturaladrillo = 20;
-let anchuraladrillo = 40;
+let anchuraladrillo = 50;
 
 //-- Velocidades del objeto(de la bola)
 let velx = 3;
