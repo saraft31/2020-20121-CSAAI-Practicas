@@ -123,7 +123,7 @@ function update(){
     if (xbola >= xtabla && xbola <= (xtabla + 90) && ybola >= (ytabla - radio) 
           && ybola <=(ytabla + 30)) {
       vely = vely * -1;
-      velx = velx * -1;
+      //velx = velx * -1;
     }
     
     //rebote en lalilios
