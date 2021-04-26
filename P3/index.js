@@ -19,8 +19,8 @@ let radio = 10;
 let xinit = 40;
 let yinit = 50;
 let xincremento = 95;
-let filas = 6;
-let columnas = 4;
+let filas = 4;
+let columnas = 6;
 var arraybloques = new Array(filas*columnas);
 var arraycolores = ['rgb(255, 0, 238)', 'rgb(255, 241, 118)' ,'rgb(255, 174, 250)', 'rgb(21, 248, 218)'];
 let b = 0;
@@ -44,15 +44,31 @@ let estado = ESTADO.INIT //primer estado el init
 for (i = 0; i < filas; i++){
   for(j = 0; j < columnas; j++){
       var bloque = {
-          x : xinit + i * xincremento,
-          y : yinit + j * yinit,
+          x : xinit + j * xincremento,
+          y : yinit + i * yinit,
           estado : 1,
-          color : arraycolores[Math.floor(Math.random()*4)]
+          //color : arraycolores[Math.floor(Math.random()*4)] para hacer el color random
       };
       arraybloques[b] = bloque; 
-      b = b + 1;
+      //console.log(arraybloques[b]);
+      b = b + 1; //b es cada posicion del arraybloque
   }
 }
+
+//paraponerle un color a cada fila del arraybloque
+for (b = 18; b < 24; b++){   
+  arraybloques[b].color = "rgb(255, 0, 238)"; 
+}
+for (b = 12; b < 18; b++){   
+  arraybloques[b].color = "rgb(255, 241, 118)"; 
+}
+for (b = 6; b < 12; b++){   
+  arraybloques[b].color = "rgb(255, 174, 250)"; 
+}
+for (b = 0; b < 6; b++){   
+  arraybloques[b].color = "rgb(21, 248, 218)"; 
+}
+
 
 function dibujartabla(){
     ctx.beginPath();
@@ -68,7 +84,7 @@ function dibujarbola(){
     img.src = "bola1.jfif";
     ctx.beginPath();
     ctx.arc(xbola, ybola, radio, 0, 2 * Math.PI); //dibujar (x,y,tamaño,esquinas,angulo,radio)
-    ctx.fillStyle = ctx.createPattern(img, "repeat");; //estilo
+    ctx.fillStyle = ctx.createPattern(img, "repeat");//estilo
     ctx.fill(); //relleno
     ctx.stroke() //dibuar el trazo
   ctx.closePath();
@@ -110,6 +126,17 @@ function update(){
       velx = velx * -1;
     }
     
+    //rebote en lalilios
+    for (var b in arraybloques){
+      bloque = arraybloques[b];
+      if (xbola >= bloque.x && xbola <=(bloque.x + anchuraladrillo + radio) 
+          && ybola >= (bloque.y) && ybola <=(bloque.y + alturaladrillo + radio) 
+          && bloque.estado == 1){
+          bloque.estado = 0; //hace que el bloque desaparezzca cuando lo toca la bola
+          vely = vely * -1;
+          velx = velx * -1;
+      }
+    }
     
     //limete bola por abajo (pierdes)
     if (ybola > 570){
