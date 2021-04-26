@@ -13,6 +13,7 @@ let xtabla = 260;
 let ytabla = 550;
 let xbola = 300;
 let ybola = 300;
+let radio = 10;
 
 //ladrillos
 let xinit = 40;
@@ -50,13 +51,12 @@ for (i = 0; i < filas; i++){
       };
       arraybloques[b] = bloque; 
       b = b + 1;
-      
   }
 }
 
 function dibujartabla(){
     ctx.beginPath();
-    ctx.rect(xtabla, ytabla, 80, 20); //dibujar
+    ctx.rect(xtabla, ytabla, 80, 20); //dibujar (x,y, dimensiones)
     ctx.fillStyle = 'blanchedalmond'; //estilo
     ctx.fill(); //relleno
     ctx.stroke() //dibujar el trazo
@@ -67,7 +67,7 @@ function dibujarbola(){
     var img = new Image();
     img.src = "bola1.jfif";
     ctx.beginPath();
-    ctx.arc(xbola, ybola, 10, 0, 2 * Math.PI); //dibujar (x,y,tamaño,esquinas,angulo,radio)
+    ctx.arc(xbola, ybola, radio, 0, 2 * Math.PI); //dibujar (x,y,tamaño,esquinas,angulo,radio)
     ctx.fillStyle = ctx.createPattern(img, "repeat");; //estilo
     ctx.fill(); //relleno
     ctx.stroke() //dibuar el trazo
@@ -104,8 +104,8 @@ function update(){
     ybola = ybola + vely;
 
     //rebote raqueta
-    if (xbola >= xtabla && xbola <= (xtabla + 100) && ybola >= (ytabla - 10) 
-          && ybola <=(ytabla + 75)) {
+    if (xbola >= xtabla && xbola <= (xtabla + 90) && ybola >= (ytabla - radio) 
+          && ybola <=(ytabla + 30)) {
       vely = vely * -1;
       velx = velx * -1;
     }
