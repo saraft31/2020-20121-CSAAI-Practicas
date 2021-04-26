@@ -134,7 +134,6 @@ function update(){
           && bloque.estado == 1){
           bloque.estado = 0; //hace que el bloque desaparezzca cuando lo toca la bola
           vely = vely * -1;
-          velx = velx * -1;
       }
     }
     
