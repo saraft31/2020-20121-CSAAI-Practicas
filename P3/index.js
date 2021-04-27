@@ -15,10 +15,15 @@ let xbola = 300;
 let ybola = 300;
 let radio = 10;
 
+//puntos y vidas inicio
+let puntos = 0;
+let vidas = 3;
+
 //ladrillos
-let xinit = 40;
-let yinit = 50;
+let xinit = 35;
+let yinit = 60;
 let xincremento = 60;
+let yincremento = 50 ;
 let filas = 5;
 let columnas = 9;
 var arraybloques = new Array(filas*columnas);
@@ -45,7 +50,7 @@ for (i = 0; i < filas; i++){
   for(j = 0; j < columnas; j++){
       var bloque = {
           x : xinit + j * xincremento,
-          y : yinit + i * yinit,
+          y : yinit + i * yincremento,
           estado : 1,
           //color : arraycolores[Math.floor(Math.random()*4)] para hacer el color random
       };
@@ -55,7 +60,7 @@ for (i = 0; i < filas; i++){
   }
 }
 
-//paraponerle un color a cada fila del arraybloque
+//para ponerle un color a cada fila del arraybloque
 for (b = 36; b < 45; b++){   
   arraybloques[b].color = "rgb(144, 85, 255)"; 
 }
@@ -106,6 +111,19 @@ function dibujarladrillos(){
   }
 }
 
+function life(){
+  ctx.font = "20px Zrnic";
+    ctx.fillStyle = 'white'
+    ctx.fillText("Vidas:", 20, 30);
+    ctx.fillText(vidas, 70, 30);
+}
+
+function points(){
+  ctx.font = "20px Zrnic";
+    ctx.fillStyle = 'white'
+    ctx.fillText("Puntos:", 480, 30);
+    ctx.fillText(puntos, 570, 30);
+}
 //-- Funcion principal de animacion
 function update(){
 
@@ -158,9 +176,11 @@ function update(){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
-    dibujartabla()
-    dibujarbola()
+    dibujartabla();
+    dibujarbola();
     dibujarladrillos();
+    life();
+    points();
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
 
