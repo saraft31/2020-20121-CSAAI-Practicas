@@ -171,7 +171,7 @@ function update(){
     ybola = ybola + vely;
 
     //rebote raqueta
-    if (xbola >= xtabla && xbola <= (xtabla + 90) && ybola >= (ytabla - radio) 
+    if (xbola >= xtabla + radio && xbola <= (xtabla + 90) && ybola >= (ytabla - radio) 
           && ybola <=(ytabla + 30 - radio)) {
       vely = vely * -1;
       //velx = velx * -1; Si pongo los 2 siepre se repiten las mismas trayectorias 
@@ -186,19 +186,19 @@ function update(){
           bloque.estado = 0; //hace que el bloque desaparezzca cuando lo toca la bola
           vely = vely * -1;
           //según el color se suma una puntuación distinta
-          if (bloque.color = "rgb(144, 85, 255)"){
+          if (bloque.color == "rgb(144, 85, 255)"){
             puntos = puntos + 1;
           }
-          if (bloque.color = "rgb(255, 174, 250)"){
+          if (bloque.color == "rgb(255, 174, 250)"){
             puntos = puntos + 2;
           }
-          if (bloque.color = "rgb(255, 241, 118)"){
+          if (bloque.color == "rgb(255, 241, 118)"){
             puntos = puntos + 4;
           }
-          if (bloque.color = "rgb(255, 0, 238)"){
+          if (bloque.color == "rgb(255, 0, 238)"){
             puntos = puntos + 8;
           }
-          if (bloque.color = "rgb(21, 248, 218)"){
+          if (bloque.color == "rgb(21, 248, 218)"){
             puntos = puntos + 10;
           }
       }
