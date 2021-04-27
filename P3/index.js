@@ -19,6 +19,9 @@ let radio = 10;
 let puntos = 0;
 let vidas = 3;
 
+//sonidos
+const raqueta = new Audio("raqueta.mp3");
+
 //ladrillos
 let xinit = 35;
 let yinit = 60;
@@ -207,6 +210,7 @@ function update(){
     if (xbola >= xtabla - radio && xbola <= (xtabla + 90) &&
     ybola >= (ytabla - radio) && ybola <=(ytabla + 30 - radio)){
       vely = vely * -1;
+      raqueta.play();
       //velx = velx * -1;//Si pongo los 2 siepre se repiten las mismas trayectorias 
     }
     
