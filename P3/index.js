@@ -33,8 +33,8 @@ let alturaladrillo = 20;
 let anchuraladrillo = 50;
 
 //-- Velocidades del objeto(de la bola)
-let velx = 3;
-let vely = 1;
+let velx = 6;
+let vely = -2;
 
 //const Estados
 const ESTADO = {
@@ -124,6 +124,18 @@ function points(){
     ctx.fillText("Puntos:", 480, 30);
     ctx.fillText(puntos, 570, 30);
 }
+
+function gameover(){
+  if (estado == ESTADO.FIN){
+    estado = ESTADO.INIT;
+    vidas = 3;
+    puntos = 0;
+    for (b= 0; b< columnas*filas; b++){
+      arraybloques[b].estado = 1;
+    }
+
+  }
+}
 //-- Funcion principal de animacion
 function update(){
 
@@ -159,8 +171,14 @@ function update(){
     }
     
     //limete bola por abajo (pierdes)
-    if (ybola > 570){
+    if (ybola > 560){
       estado = ESTADO.INIT;
+      vidas = vidas - 1;
+    }
+
+    //vidas a cero pierdes
+    if (vidas == 0){
+      estado = ESTADO.FIN;
     }
   }//cierro llave de if estado = jugando 
 
@@ -181,17 +199,19 @@ function update(){
     dibujarladrillos();
     life();
     points();
+    gameover();
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
 
   if (estado == ESTADO.INIT) //defino el estado init
   {   
       xbola = 300;
-      ybola = 300;
+      ybola = 500;
       velybola = 0;
       velxbola = 0;
       xRaqueta = 260;
       yRaqueta = 550;
+      
     }
 }
 
