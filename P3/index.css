@@ -7,11 +7,14 @@ body{
     font-family: 'Zrnic';
     src: url("zrnic___.ttf");
 }
+p{
+    font-size: 40px;
+}
 div {
     color: blanchedalmond;
     /*color: rgb(248, 21, 248);*/
     font-family: 'Zrnic';
-    margin-top: -40%;
+    margin-top: -43%;
     margin-left: 5%;
     
 }

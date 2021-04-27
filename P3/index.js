@@ -18,9 +18,9 @@ let radio = 10;
 //ladrillos
 let xinit = 40;
 let yinit = 50;
-let xincremento = 95;
-let filas = 4;
-let columnas = 6;
+let xincremento = 60;
+let filas = 5;
+let columnas = 9;
 var arraybloques = new Array(filas*columnas);
 var arraycolores = ['rgb(255, 0, 238)', 'rgb(255, 241, 118)' ,'rgb(255, 174, 250)', 'rgb(21, 248, 218)'];
 let b = 0;
@@ -56,16 +56,19 @@ for (i = 0; i < filas; i++){
 }
 
 //paraponerle un color a cada fila del arraybloque
-for (b = 18; b < 24; b++){   
-  arraybloques[b].color = "rgb(255, 0, 238)"; 
+for (b = 36; b < 45; b++){   
+  arraybloques[b].color = "rgb(144, 85, 255)"; 
 }
-for (b = 12; b < 18; b++){   
-  arraybloques[b].color = "rgb(255, 241, 118)"; 
-}
-for (b = 6; b < 12; b++){   
+for (b = 27; b < 36; b++){   
   arraybloques[b].color = "rgb(255, 174, 250)"; 
 }
-for (b = 0; b < 6; b++){   
+for (b = 18; b < 27; b++){   
+  arraybloques[b].color = "rgb(255, 241, 118)"; 
+}
+for (b = 9; b < 18; b++){   
+  arraybloques[b].color = "rgb(255, 0, 238)"; 
+}
+for (b = 0; b < 9; b++){   
   arraybloques[b].color = "rgb(21, 248, 218)"; 
 }
 
@@ -123,7 +126,7 @@ function update(){
     if (xbola >= xtabla && xbola <= (xtabla + 90) && ybola >= (ytabla - radio) 
           && ybola <=(ytabla + 30)) {
       vely = vely * -1;
-      //velx = velx * -1;
+      //velx = velx * -1; Si pongo los 2 siepre se repiten las mismas trayectorias 
     }
     
     //rebote en lalilios
