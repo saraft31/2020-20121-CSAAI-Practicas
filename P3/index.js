@@ -130,8 +130,26 @@ function gameover(){
     estado = ESTADO.INIT;
     vidas = 3;
     puntos = 0;
-    for (b= 0; b< columnas*filas; b++){
+    //esto lo hago para que cuando se reinicien los ladrillos sea cada linea con su color
+    for (b = 0; b < 9; b++){
       arraybloques[b].estado = 1;
+      arraybloques[b].color = "rgb(21, 248, 218)";
+    }
+    for (b = 9; b < 18; b++){
+      arraybloques[b].estado = 1;
+      arraybloques[b].color = "rgb(255, 0, 238)";
+    }
+    for (b = 18; b < 27; b++){
+      arraybloques[b].estado = 1;
+      arraybloques[b].color = "rgb(255, 241, 118)";
+    }
+    for (b = 27; b < 36; b++){
+      arraybloques[b].estado = 1;
+      arraybloques[b].color = "rgb(255, 174, 250)";
+    }
+    for (b = 36; b < 45; b++){
+      arraybloques[b].estado = 1;
+      arraybloques[b].color = "rgb(144, 85, 255)";
     }
 
   }
@@ -154,7 +172,7 @@ function update(){
 
     //rebote raqueta
     if (xbola >= xtabla && xbola <= (xtabla + 90) && ybola >= (ytabla - radio) 
-          && ybola <=(ytabla + 30)) {
+          && ybola <=(ytabla + 30 - radio)) {
       vely = vely * -1;
       //velx = velx * -1; Si pongo los 2 siepre se repiten las mismas trayectorias 
     }
@@ -167,6 +185,22 @@ function update(){
           && bloque.estado == 1){
           bloque.estado = 0; //hace que el bloque desaparezzca cuando lo toca la bola
           vely = vely * -1;
+          //según el color se suma una puntuación distinta
+          if (bloque.color = "rgb(144, 85, 255)"){
+            puntos = puntos + 1;
+          }
+          if (bloque.color = "rgb(255, 174, 250)"){
+            puntos = puntos + 2;
+          }
+          if (bloque.color = "rgb(255, 241, 118)"){
+            puntos = puntos + 4;
+          }
+          if (bloque.color = "rgb(255, 0, 238)"){
+            puntos = puntos + 8;
+          }
+          if (bloque.color = "rgb(21, 248, 218)"){
+            puntos = puntos + 10;
+          }
       }
     }
     
@@ -207,8 +241,8 @@ function update(){
   {   
       xbola = 300;
       ybola = 500;
-      velybola = 0;
-      velxbola = 0;
+      vely = -2;
+      velx = 6;
       xRaqueta = 260;
       yRaqueta = 550;
       
