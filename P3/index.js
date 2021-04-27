@@ -83,6 +83,8 @@ function dibujartabla(){
     ctx.rect(xtabla, ytabla, 80, 20); //dibujar (x,y, dimensiones)
     ctx.fillStyle = 'blanchedalmond'; //estilo
     ctx.fill(); //relleno
+    ctx.strokeStyle = 'black';//borde negro
+    ctx.setLineDash([]); //continua
     ctx.stroke() //dibujar el trazo
   ctx.closePath();
 }
@@ -94,6 +96,8 @@ function dibujarbola(){
     ctx.arc(xbola, ybola, radio, 0, 2 * Math.PI); //dibujar (x,y,tamaño,esquinas,angulo,radio)
     ctx.fillStyle = ctx.createPattern(img, "repeat");//estilo
     ctx.fill(); //relleno
+    ctx.strokeStyle = 'black'; //borde negr
+    ctx.setLineDash([]); //continua
     ctx.stroke() //dibuar el trazo
   ctx.closePath();
 }
@@ -104,11 +108,23 @@ function dibujarladrillos(){
           ctx.beginPath();
               ctx.rect(arraybloques[b].x,arraybloques[b].y,anchuraladrillo,alturaladrillo);
               ctx.fillStyle = arraybloques[b].color;
+              ctx.strokeStyle = 'black';
+              ctx.setLineDash([]);
               ctx.fill();
               ctx.stroke()
           ctx.closePath();
       }
   }
+}
+
+function dibujarred(){
+    ctx.beginPath();    
+    ctx.moveTo( 0, 570);//de este punto 
+    ctx.lineTo(600, 570); //a este
+    ctx.setLineDash([10, 10]); //discontinua
+    ctx.strokeStyle = 'white'; //borde blanco
+    ctx.stroke();
+  ctx.closePath();
 }
 
 function life(){
@@ -171,10 +187,10 @@ function update(){
     ybola = ybola + vely;
 
     //rebote raqueta
-    if (xbola >= xtabla + radio && xbola <= (xtabla + 90) && ybola >= (ytabla - radio) 
-          && ybola <=(ytabla + 30 - radio)) {
+    if (xbola >= xtabla - radio && xbola <= (xtabla + 90) &&
+    ybola >= (ytabla - radio) && ybola <=(ytabla + 30 - radio)){
       vely = vely * -1;
-      //velx = velx * -1; Si pongo los 2 siepre se repiten las mismas trayectorias 
+      //velx = velx * -1;//Si pongo los 2 siepre se repiten las mismas trayectorias 
     }
     
     //rebote en lalilios
@@ -205,7 +221,7 @@ function update(){
     }
     
     //limete bola por abajo (pierdes)
-    if (ybola > 560){
+    if (ybola > 570){
       estado = ESTADO.INIT;
       vidas = vidas - 1;
     }
@@ -234,6 +250,7 @@ function update(){
     life();
     points();
     gameover();
+    dibujarred();
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
 
