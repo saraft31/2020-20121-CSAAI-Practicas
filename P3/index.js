@@ -141,6 +141,23 @@ function points(){
     ctx.fillText(puntos, 570, 30);
 }
 
+function ganas(){
+  found = false;
+  b = 0; 
+  while (found == false && b < filas*columnas){
+      if (arraybloques[b].estado == 1){
+          found = true;
+      }
+     b = b + 1;
+  }
+  if (found == false){
+    for (b = 0;  b < columnas*filas; b++){
+      arraybloques[b].estado = 1
+  }  
+  estado = ESTADO.WIN;
+}
+}
+
 function gameover(){
   if (estado == ESTADO.FIN){
     estado = ESTADO.INIT;
@@ -230,6 +247,8 @@ function update(){
     if (vidas == 0){
       estado = ESTADO.FIN;
     }
+
+    
   }//cierro llave de if estado = jugando 
 
   //Limites raqueta (por los lados)
@@ -251,6 +270,7 @@ function update(){
     points();
     gameover();
     dibujarred();
+    ganas();
   //-- 4) Volver a ejecutar update cuando toque
   requestAnimationFrame(update);
 
@@ -264,6 +284,11 @@ function update(){
       yRaqueta = 550;
       
     }
+  //estado ganas
+  if (estado ==  ESTADO.WIN){
+    console.log('pene');
+    estado = ESTADO.INIT;
+  }
 }
 
 //mover raqueta
@@ -271,10 +296,10 @@ window.onkeydown = (e) => {
     //-- Según la tecla se hace una cosa u otra
     switch (e.key) {
       case "4": //izq
-        xtabla = xtabla - 20;
+        xtabla = xtabla - 30;
         break;
       case "6": //drch
-        xtabla = xtabla + 20;
+        xtabla = xtabla + 30;
         break;
       case " ":
         estado = ESTADO.JUGANDO;
