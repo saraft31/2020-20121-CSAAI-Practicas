@@ -7,15 +7,24 @@ body{
     font-family: 'Zrnic';
     src: url("zrnic___.ttf");
 }
-p{
+h1{
+   /*margin-top: 2px;*/
     font-size: 40px;
 }
+p{
+    color: white;
+    margin-left: 1px;
+}
 div {
-    color: blanchedalmond;
+    color: rgb(255, 51, 238);
     /*color: rgb(248, 21, 248);*/
     font-family: 'Zrnic';
     margin-top: -43%;
     margin-left: 5%;
+    margin-right: 75%;
+    background-color: rgba(0, 0, 0, 0.842);
+    border-radius: 6px;
+    padding: 2px;
     
 }
 canvas {

@@ -26,6 +26,11 @@ const ladrillo = new Audio("bip6.mp3");
 const fallo = new Audio("fallo.mp3");
 const fin = new Audio("gameover.mp3");
 
+//botones
+const button = document.getElementById("button");
+const button2 = document.getElementById("button2");
+
+
 //ladrillos
 let xinit = 35;
 let yinit = 60;
@@ -194,6 +199,9 @@ function gameover(){
 
   }
 }
+
+
+
 //-- Funcion principal de animacion
 function update(){
 
@@ -321,4 +329,16 @@ window.onkeydown = (e) => {
     }
   }
 //-- ¡Que empiece la función!
+
+//funcionbotones
+button.onclick = (ev) => {
+  console.log("hola");
+  xtabla = xtabla - 50;
+}
+
+button2.onclick = (ev) => {
+  console.log("hola");
+  xtabla = xtabla + 50;
+}
+
 update();
