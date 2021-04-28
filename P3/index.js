@@ -21,6 +21,10 @@ let vidas = 3;
 
 //sonidos
 const raqueta = new Audio("raqueta.mp3");
+const rebote = new Audio("rebote.mp3");
+const ladrillo = new Audio("bip6.mp3");
+const fallo = new Audio("fallo.mp3");
+const fin = new Audio("gameover.mp3");
 
 //ladrillos
 let xinit = 35;
@@ -199,8 +203,10 @@ function update(){
     //-- movimiento bola
     if (xbola < 10 || xbola >= (canvas.width - 10) ) {
       velx = -velx;
+      rebote.play();
     }if(ybola <= 10 || ybola >= (canvas.height-10 )) {
       vely = -vely;
+      rebote.play();
     }
     //Actualizar la posición
     xbola = xbola + velx;
@@ -211,6 +217,7 @@ function update(){
     ybola >= (ytabla - radio) && ybola <=(ytabla + 30 - radio)){
       vely = vely * -1;
       raqueta.play();
+      
       //velx = velx * -1;//Si pongo los 2 siepre se repiten las mismas trayectorias 
     }
     
@@ -222,6 +229,7 @@ function update(){
           && bloque.estado == 1){
           bloque.estado = 0; //hace que el bloque desaparezzca cuando lo toca la bola
           vely = vely * -1;
+          ladrillo.play();
           //según el color se suma una puntuación distinta
           if (bloque.color == "rgb(144, 85, 255)"){
             puntos = puntos + 1;
@@ -245,11 +253,13 @@ function update(){
     if (ybola > 570){
       estado = ESTADO.INIT;
       vidas = vidas - 1;
+      fallo.play();
     }
 
     //vidas a cero pierdes
     if (vidas == 0){
       estado = ESTADO.FIN;
+      fin.play();
     }
 
     
