@@ -20,7 +20,7 @@ div {
     background-color: rgba(0, 0, 0, 0.842);
     /*color: rgb(248, 21, 248);*/
     font-family: 'Zrnic';
-    margin-top: -43%;
+    margin-top: -550px;
     margin-left: 5%;
     margin-right: 75%;
     
@@ -37,7 +37,7 @@ canvas {
     border-width: 1px;
     border-color: lightblue;
     border-radius: 5px;
-    margin-left: 27%;
+    margin-left: 500px;
     margin-top: 1%;
 }
 
