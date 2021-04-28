@@ -17,16 +17,18 @@ p{
 }
 div {
     color: rgb(255, 51, 238);
+    background-color: rgba(0, 0, 0, 0.842);
     /*color: rgb(248, 21, 248);*/
     font-family: 'Zrnic';
     margin-top: -43%;
     margin-left: 5%;
     margin-right: 75%;
-    background-color: rgba(0, 0, 0, 0.842);
+    
     border-radius: 6px;
     padding: 2px;
     
 }
+
 canvas {
     text-align: center;
     background-color: black;
@@ -37,4 +39,40 @@ canvas {
     border-radius: 5px;
     margin-left: 27%;
     margin-top: 1%;
-  }
+}
+
+/*pa los buttons*/
+#button0{
+    height: 40px;
+    width: 80px;
+    font-family: 'Zrnic';
+    font-size: 20px;
+    border-radius: 20px;
+    border-color: rgb(255, 51, 238);
+    margin-left: 65px;
+}
+#button{
+    height: 40px;
+    width: 100px;
+    font-family: 'Zrnic';
+    font-size: 20px;
+    border-radius: 20px;
+    border-color: rgb(255, 51, 238);
+}
+#button2{
+    height: 40px;
+    width: 100px;
+    font-family: 'Zrnic';
+    font-size: 20px;
+    border-radius: 20px;
+    border-color: rgb(255, 51, 238);
+}
+#button0:hover{
+    background-color:rgb(253, 122, 242) ;
+}
+#button:hover{
+    background-color:rgb(253, 122, 242) ;
+}
+#button2:hover{
+    background-color:rgb(253, 122, 242) ;
+}

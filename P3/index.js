@@ -27,6 +27,7 @@ const fallo = new Audio("fallo.mp3");
 const fin = new Audio("gameover.mp3");
 
 //botones
+const button0 = document.getElementById("button0");
 const button = document.getElementById("button");
 const button2 = document.getElementById("button2");
 
@@ -331,13 +332,13 @@ window.onkeydown = (e) => {
 //-- ¡Que empiece la función!
 
 //funcionbotones
+button0.onclick = (ev) => {
+  estado = ESTADO.JUGANDO;
+}
 button.onclick = (ev) => {
-  console.log("hola");
   xtabla = xtabla - 50;
 }
-
 button2.onclick = (ev) => {
-  console.log("hola");
   xtabla = xtabla + 50;
 }
 
