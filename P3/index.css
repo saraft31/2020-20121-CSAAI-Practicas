@@ -27,6 +27,7 @@ div {
     padding: 2px;
     width: 300px;
     
+    
 }
 
 .div2{
@@ -48,7 +49,7 @@ canvas {
     background-color: black;
     opacity: 0.9;
     border-style: solid;
-    border-width: 1px;
+    border-width: 2px;
     border-color: rgb(121, 201, 228);
     border-radius: 5px;
     margin-left: 500px;

@@ -224,8 +224,7 @@ function update(){
     xbola = xbola + velx;
     ybola = ybola + vely;
 
-    //rebote raqueta
-    // Choque con mi bloque         
+    //rebote raqueta        
       if (xbola >= xtabla - radio && xbola <= (xtabla + 90) &&
     ybola >= (ytabla - radio) && ybola <=(ytabla + 30 - radio)){
       vely = vely * -1;
