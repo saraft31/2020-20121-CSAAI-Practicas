@@ -25,6 +25,7 @@ const rebote = new Audio("rebote.mp3");
 const ladrillo = new Audio("bip6.mp3");
 const fallo = new Audio("fallo.mp3");
 const fin = new Audio("gameover.mp3");
+const win = new Audio("win.mp3");
 
 //botones
 const button0 = document.getElementById("button0");
@@ -166,8 +167,10 @@ function ganas(){
   if (found == false){
     for (b = 0;  b < columnas*filas; b++){
       arraybloques[b].estado = 1
+      win.play();
   }  
   estado = ESTADO.WIN;
+  
 }
 }
 
@@ -222,9 +225,11 @@ function update(){
     ybola = ybola + vely;
 
     //rebote raqueta
-    if (xbola >= xtabla - radio && xbola <= (xtabla + 90) &&
+    // Choque con mi bloque         
+      if (xbola >= xtabla - radio && xbola <= (xtabla + 90) &&
     ybola >= (ytabla - radio) && ybola <=(ytabla + 30 - radio)){
       vely = vely * -1;
+      
       raqueta.play();
       
       //velx = velx * -1;//Si pongo los 2 siepre se repiten las mismas trayectorias 

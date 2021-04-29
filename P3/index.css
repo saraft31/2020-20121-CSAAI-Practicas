@@ -18,14 +18,29 @@ p{
 div {
     color: rgb(255, 51, 238);
     background-color: rgba(0, 0, 0, 0.842);
-    /*color: rgb(248, 21, 248);*/
+    border-color: rgb(121, 201, 228);
     font-family: 'Zrnic';
-    margin-top: -550px;
+    margin-top: -600px;
     margin-left: 5%;
-    margin-right: 900px;
+    margin-right: 70%;
     border-radius: 6px;
     padding: 2px;
     
+    
+}
+
+.div2{
+    color: rgb(255, 51, 238);
+    background-color: rgba(0, 0, 0, 0.842);
+    border-color: rgb(121, 201, 228);
+    font-family: 'Zrnic';
+    margin-top: 40px;
+    margin-left: 5%;
+    margin-right: 70%;
+    border-radius: 6px;
+    padding: 2px;
+    background-size: cover;
+    display: block;
 }
 
 canvas {
@@ -34,7 +49,7 @@ canvas {
     opacity: 0.9;
     border-style: solid;
     border-width: 1px;
-    border-color: lightblue;
+    border-color: rgb(121, 201, 228);
     border-radius: 5px;
     margin-left: 500px;
     margin-top: 1%;
@@ -48,7 +63,7 @@ canvas {
     font-size: 20px;
     border-radius: 20px;
     border-color: rgb(255, 51, 238);
-    margin-left: 65px;
+    margin-left: 110px;
 }
 #button{
     height: 40px;
@@ -57,6 +72,7 @@ canvas {
     font-size: 20px;
     border-radius: 20px;
     border-color: rgb(255, 51, 238);
+    margin-left: 50px;
 }
 #button2{
     height: 40px;
