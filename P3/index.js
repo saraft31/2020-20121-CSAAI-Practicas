@@ -336,10 +336,10 @@ button0.onclick = (ev) => {
   estado = ESTADO.JUGANDO;
 }
 button.onclick = (ev) => {
-  xtabla = xtabla - 50;
+  xtabla = xtabla - 60;
 }
 button2.onclick = (ev) => {
-  xtabla = xtabla + 50;
+  xtabla = xtabla + 60;
 }
 
 update();
