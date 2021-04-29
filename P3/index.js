@@ -32,7 +32,6 @@ const button0 = document.getElementById("button0");
 const button = document.getElementById("button");
 const button2 = document.getElementById("button2");
 
-
 //ladrillos
 let xinit = 35;
 let yinit = 60;
@@ -168,10 +167,9 @@ function ganas(){
     for (b = 0;  b < columnas*filas; b++){
       arraybloques[b].estado = 1
       win.play();
-  }  
+    }  
   estado = ESTADO.WIN;
-  
-}
+  }
 }
 
 function gameover(){
@@ -312,12 +310,11 @@ function update(){
     }
   //estado ganas
   if (estado ==  ESTADO.WIN){
-    console.log('pene');
     estado = ESTADO.INIT;
   }
 }
 
-//mover raqueta
+//mover raqueta según lo que entra por el teclado
 window.onkeydown = (e) => {
     //-- Según la tecla se hace una cosa u otra
     switch (e.key) {
@@ -335,12 +332,15 @@ window.onkeydown = (e) => {
 //-- ¡Que empiece la función!
 
 //funcionbotones
+//play
 button0.onclick = (ev) => {
   estado = ESTADO.JUGANDO;
 }
+//izq
 button.onclick = (ev) => {
   xtabla = xtabla - 80;
 }
+//drecha
 button2.onclick = (ev) => {
   xtabla = xtabla + 80;
 }
