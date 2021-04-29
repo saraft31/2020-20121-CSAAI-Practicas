@@ -229,10 +229,9 @@ function update(){
       if (xbola >= xtabla - radio && xbola <= (xtabla + 90) &&
     ybola >= (ytabla - radio) && ybola <=(ytabla + 30 - radio)){
       vely = vely * -1;
-      
+      //velx = velx * -1;//Si pongo los 2 siepre se repiten las mismas trayectorias 
       raqueta.play();
       
-      //velx = velx * -1;//Si pongo los 2 siepre se repiten las mismas trayectorias 
     }
     
     //rebote en lalilios
