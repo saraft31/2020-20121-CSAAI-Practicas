@@ -145,14 +145,14 @@ function life(){
   ctx.font = "20px Zrnic";
     ctx.fillStyle = 'white'
     ctx.fillText("Vidas:", 20, 30);
-    ctx.fillText(vidas, 70, 30);
+    ctx.fillText(vidas, 80, 30);
 }
 
 function points(){
   ctx.font = "20px Zrnic";
     ctx.fillStyle = 'white'
-    ctx.fillText("Puntos:", 480, 30);
-    ctx.fillText(puntos, 570, 30);
+    ctx.fillText("Puntos:", 490, 30);
+    ctx.fillText(puntos, 560, 30);
 }
 
 function ganas(){
