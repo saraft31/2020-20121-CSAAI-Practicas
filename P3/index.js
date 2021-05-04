@@ -32,6 +32,11 @@ const button0 = document.getElementById("button0");
 const button = document.getElementById("button");
 const button2 = document.getElementById("button2");
 
+//botones dificultad
+const buttonF = document.getElementById("buttonF");
+const buttonM = document.getElementById("buttonM");
+const buttonD = document.getElementById("buttonD");
+
 //ladrillos
 let xinit = 35;
 let yinit = 60;
@@ -302,12 +307,71 @@ function update(){
   {   
       xbola = 300;
       ybola = 500;
-      vely = -2;
-      velx = 6;
       xRaqueta = 260;
       yRaqueta = 550;
-      
+      //función botones dificultad 
+      //FACIL
+      buttonF.onchange = () => {
+        velx = 3;
+        vely = -1;
+        window.onkeydown = (e) => {
+          //-- Según la tecla se hace una cosa u otra
+          switch (e.key) {
+            case "4": //izq
+              xtabla = xtabla - 40;
+              break;
+            case "6": //drch
+              xtabla = xtabla + 40;
+              break;
+            case " ":
+              estado = ESTADO.JUGANDO;
+            break;
+          }
+        }
+      }
+      //MEDIO
+      buttonM.onchange = () => {
+        velx = 6;
+        vely = -2;
+        window.onkeydown = (e) => {
+          //-- Según la tecla se hace una cosa u otra
+          switch (e.key) {
+            case "4": //izq
+              xtabla = xtabla - 30;
+              break;
+            case "6": //drch
+              xtabla = xtabla + 30;
+              break;
+            case " ":
+              estado = ESTADO.JUGANDO;
+            break;
+            }
+          }
+        }
+      //DIFICIL
+      buttonD.onchange = () => {
+        velx = 10;
+        vely = -3;
+        window.onkeydown = (e) => {
+          //-- Según la tecla se hace una cosa u otra
+          switch (e.key) {
+            case "4": //izq
+              xtabla = xtabla - 20;
+              break;
+            case "6": //drch
+              xtabla = xtabla + 20;
+              break;
+            case " ":
+              estado = ESTADO.JUGANDO;
+            break;
+          }
+        }
+      }
+      if(vely >0){
+        vely = -vely;
+      };
     }
+  
   //estado ganas
   if (estado ==  ESTADO.WIN){
     estado = ESTADO.INIT;
