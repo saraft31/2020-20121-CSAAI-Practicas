@@ -49,6 +49,7 @@ img1.onload = function(){
     canvas.height = 300;
     ctx.drawImage(img1, 0, 0);
     console.log("Imagen1 ready");
+    deslizadores1();
   };
 
 img2.onload = function(){
@@ -56,6 +57,7 @@ img2.onload = function(){
     canvas.height = 300;
     ctx.drawImage(img2, 0, 0);
     console.log("Imagen2 ready");
+    deslizadores2();
 };
 
 
@@ -111,10 +113,10 @@ function deslizadores1(){
     ctx.putImageData(imgData, 0, 0);
   }
 }
-deslizadores1();
+
 function deslizadores2(){
   
-  ctx.drawImage(img2, 0,0); //retrollamada de los deslizadores
+  //Sctx.drawImage(img2, 0,0); //retrollamada de los deslizadores
   
   desRojo.oninput = () => {
     value_rojo.innerHTML = desRojo.value;//muestro el nuevo valor del deslizador
@@ -147,7 +149,6 @@ function deslizadores2(){
   }
 }
 
-deslizadores2();
 console.log("Fin...");
 
 
