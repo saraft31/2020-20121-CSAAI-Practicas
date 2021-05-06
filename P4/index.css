@@ -4,3 +4,14 @@ body{
     background: cover;
     background-size: cover;
 }
+
+div{
+    text-align: center;
+}
+
+#image1{
+    width: 450px; height: 300px;
+}
+#image2{
+    width: 450px; height: 300px;
+}
