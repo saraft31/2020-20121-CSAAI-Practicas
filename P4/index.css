@@ -15,3 +15,18 @@ div{
 #image2{
     width: 450px; height: 300px;
 }
+
+leftcolumn{
+    margin-left: 5px;
+}
+
+.drch{
+    text-align: left;
+    margin-left: 100px;
+}
+
+.izq{
+    text-align: right;
+    margin-top: -500px;
+    margin-right: 100px;
+}
