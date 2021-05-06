@@ -367,6 +367,8 @@ function update(){
           }
         }
       }
+      //para que cada vez que vuelva a empezar empiece moviendose 
+      //la bola hacia arriba
       if(vely >0){
         vely = -vely;
       };
