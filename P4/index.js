@@ -10,6 +10,13 @@ const img1 = document.getElementById('image1');
 const img2 = document.getElementById('image2')
 const ctx = canvas.getContext('2d');
 
+//-- Acceso al deslizador
+const deslizador = document.getElementById('deslizador');
+
+//-- Valor del deslizador
+const range_value = document.getElementById('range_value');
+
+
 //imagen de antes 
 var test = new Image(450,300);
 test.src = 'pp.jpg';
@@ -48,6 +55,34 @@ img2.onload = function(){
 };
 
 
+//-- Funcion de retrollamada del deslizador
+deslizador.oninput = () => {
+    //-- Mostrar el nuevo valor del deslizador
+    range_value.innerHTML = deslizador.value;
+  
+    //-- Situar la imagen original en el canvas
+    //-- No se han hecho manipulaciones todavia
+    
+    //-- Obtener la imagen del canvas en pixeles
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  
+    //-- Obtener el array con todos los píxeles
+    let data = imgData.data
+  
+    //-- Obtener el umbral de rojo del desliador
+    umbral = deslizador.value
+  
+    //-- Filtrar la imagen según el nuevo umbral
+    for (let i = 0; i < data.length; i+=4) {
+      if (data[i] > umbral)
+        data[i] = umbral;
+    }
+  
+    //-- Poner la imagen modificada en el canvas
+    ctx.putImageData(imgData, 0, 0);
+  }
 
+
+console.log("Fin...");
 
 
