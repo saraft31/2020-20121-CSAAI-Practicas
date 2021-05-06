@@ -1,14 +1,17 @@
 /*holo*/
+/*ajustes de fondo*/
 body{
+    font-family: 'Rapscallion';
+    
     background-image: url(fondo1.jpg);
     background: cover;
     background-size: cover;
 }
-
-div{
-    text-align: center;
+@font-face{
+    font-family: 'Rapscallion';
+    src: url("RAPSCALL.TTF");
 }
-
+/*tamaño imagenes*/
 #image1{
     width: 450px; height: 300px;
 }
@@ -16,17 +19,8 @@ div{
     width: 450px; height: 300px;
 }
 
-leftcolumn{
-    margin-left: 5px;
+div{
+    column-count: 2;
+    font-size: 40px;
 }
 
-.drch{
-    text-align: left;
-    margin-left: 100px;
-}
-
-.izq{
-    text-align: right;
-    margin-top: -500px;
-    margin-right: 100px;
-}

@@ -12,7 +12,7 @@ const ctx = canvas.getContext('2d');
 
 //imagen de antes 
 var test = new Image(450,300);
-test.src = 'fondo.jpg';
+test.src = 'pp.jpg';
 
 test.onload = function(){
   canvas.width = test.width;
