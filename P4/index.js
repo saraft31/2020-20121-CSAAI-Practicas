@@ -116,7 +116,7 @@ function deslizadores1(){
 
 function deslizadores2(){
   
-  //Sctx.drawImage(img2, 0,0); //retrollamada de los deslizadores
+  ctx.drawImage(img2, 0,0); //retrollamada de los deslizadores
   
   desRojo.oninput = () => {
     value_rojo.innerHTML = desRojo.value;//muestro el nuevo valor del deslizador
