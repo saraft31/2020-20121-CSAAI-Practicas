@@ -77,19 +77,15 @@ function filtroColores(data){
     }
 }
 
-function deslizadores(){
+function deslizadores1(){
+  
   ctx.drawImage(img1, 0,0); //retrollamada de los deslizadores
   
   desRojo.oninput = () => {
-    
     value_rojo.innerHTML = desRojo.value;//muestro el nuevo valor del deslizador
-    
     ctx.drawImage(img1, 0,0); //Situo la imagen 1 en el canvas
-    
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);//Obtener la imagen del canvas en pixeles
-    
     let data = imgData.data; //Obtener el array con todos los píxeles
-    
     filtroColores(data); // Obtener el umbral del rojo según del deslizador
     //Insertar imagen modificada en el canvas
     ctx.putImageData(imgData, 0, 0);
@@ -109,13 +105,49 @@ function deslizadores(){
     value_azul.innerHTML = desAzul.value;
     ctx.drawImage(img1, 0,0);
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    let data = imgData.data
+    let data = imgData.data;
     //-- Obtener el umbral del azul del deslizador
     filtroColores(data);
     ctx.putImageData(imgData, 0, 0);
   }
 }
-deslizadores();
+deslizadores1();
+function deslizadores2(){
+  
+  ctx.drawImage(img2, 0,0); //retrollamada de los deslizadores
+  
+  desRojo.oninput = () => {
+    value_rojo.innerHTML = desRojo.value;//muestro el nuevo valor del deslizador
+    ctx.drawImage(img2, 0,0); //Situo la imagen 1 en el canvas
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);//Obtener la imagen del canvas en pixeles
+    let data = imgData.data; //Obtener el array con todos los píxeles
+    filtroColores(data); // Obtener el umbral del rojo según del deslizador
+    //Insertar imagen modificada en el canvas
+    ctx.putImageData(imgData, 0, 0);
+  }
+
+  desVerde.oninput = () => {
+    value_verde.innerHTML = desVerde.value;
+    ctx.drawImage(img2, 0,0);
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let data = imgData.data
+    //-- Obtener el umbral del del deslizador
+    filtroColores(data);
+    ctx.putImageData(imgData, 0, 0);
+  }
+
+  desAzul.oninput = () => {
+    value_azul.innerHTML = desAzul.value;
+    ctx.drawImage(img2, 0,0);
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let data = imgData.data;
+    //-- Obtener el umbral del azul del deslizador
+    filtroColores(data);
+    ctx.putImageData(imgData, 0, 0);
+  }
+}
+
+deslizadores2();
 console.log("Fin...");
 
 
