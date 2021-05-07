@@ -17,12 +17,15 @@ const desAzul = document.getElementById('azul');
 
 //Constantes de los botones
 const bGris = document.getElementById('grises');
-const bNegativo = document.getElementById('negativo');
+const bColores = document.getElementById('colores');
 
 //-- Valor de los deslizadores
 const value_rojo = document.getElementById('valueR');
 const value_verde = document.getElementById('valueG');
 const value_azul = document.getElementById('valueB');
+
+//oculto los deslizadores inicialmente
+document.getElementById('sliders').style.display = 'none';
 
 
 //imagen de antes 
@@ -40,10 +43,12 @@ test.onload = function(){
 image1.onclick = () => {
     console.log("Imagen 1");
     img1.src="pp.jpg";
+    document.getElementById('sliders').style.display = 'none';
 }
 image2.onclick = () => {
     console.log("Imagen 2");
     img2.src="ww.jpg";
+    document.getElementById('sliders').style.display = 'none';
 }
 
 //Función de retrollamada de imagen cargada
@@ -173,8 +178,15 @@ function grises(){
 //cuando pincho en grises se llama a la funcion grises
 bGris.onclick = () => {
   console.log("aplico filtro grises");
+  document.getElementById('sliders').style.display = 'none';
   grises();
 }
+
+bColores.onclick = () => {
+  console.log("activo deslizadores");
+  document.getElementById('sliders').style.display = 'block';
+}
+
 
 
 console.log("Fin...");

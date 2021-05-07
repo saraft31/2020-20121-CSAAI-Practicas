@@ -12,30 +12,29 @@
 <body>
     
         <div>
-            <table>
-                <tr><b>* 1</b></tr>
-                    
+            <table id="fotos">
+                <tr><b> 1 * </b></tr>
                 <tr><img src="pp.jpg" id="image1"></tr> 
                 <br>   
-                <tr><b>* 2</b></tr> 
-                   
+                <tr><b> 2 * </b></tr> 
                 <tr> <img src="ww.jpg" id="image2"></tr>
             </table>
             <br>
             <b>M A N I P U L A D A</b>
             <br>
                 <canvas id="canvas" ALING="center"></canvas>
-                <table>
+                <p><input type="button" value="GRISES" id="grises"> </p>
+                <p><input type="button" value="COLORES" id="colores">   </p>
+
+                <table id="sliders">
                     <th>
                         <p>RED:</p><p id="valueR">255</p> 
                         <input type="range" id="rojo" min="0" max="255" value="255"/>
-                        <p><input type="button" value="GRISES" id="grises"> </p>
                         
                     </th>
                     <th>
                         <p>GREEN: </p><p id="valueG">255</p>
                         <input type="range" id="verde" min="0" max="255" value="255"/>
-                        <p><input type="button" value="NEGATIVO" id="negativo">   </p>
                     </th>
                     <th>
                         <p>BLUE:</p><p id="valueB">255</p> 
