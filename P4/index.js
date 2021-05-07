@@ -10,10 +10,14 @@ const img1 = document.getElementById('image1');
 const img2 = document.getElementById('image2')
 const ctx = canvas.getContext('2d');
 
-//-- Acceso a los deslizadores
+//Constantes de los deslizadores
 const desRojo = document.getElementById('rojo');
 const desVerde = document.getElementById('verde');
 const desAzul = document.getElementById('azul');
+
+//Constantes de los botones
+const bGris = document.getElementById('grises');
+const bNegativo = document.getElementById('negativo');
 
 //-- Valor de los deslizadores
 const value_rojo = document.getElementById('valueR');
@@ -50,6 +54,7 @@ img1.onload = function(){
     ctx.drawImage(img1, 0, 0);
     console.log("Imagen1 ready");
     deslizadores1();
+    
   };
 
 img2.onload = function(){
@@ -58,6 +63,7 @@ img2.onload = function(){
     ctx.drawImage(img2, 0, 0);
     console.log("Imagen2 ready");
     deslizadores2();
+    
 };
 
 
@@ -78,6 +84,7 @@ function filtroColores(data){
       }
     }
 }
+
 
 function deslizadores1(){
   
@@ -148,6 +155,27 @@ function deslizadores2(){
     ctx.putImageData(imgData, 0, 0);
   }
 }
+
+//funcion para poner la imagen en grises
+function grises(){
+  var grises = 0;
+  //ctx.drawImage(img2, 0,0);
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  let data = imgData.data;
+  for (var i = 0; i < data.length; i+=4) {
+    grises = (3 * data[i] + 4 * data[i+1] + data[i+2])/8;
+    data[i] = grises;
+    data[i+1] = grises;
+    data[i+2] = grises;
+  }
+  ctx.putImageData(imgData, 0, 0);
+}
+//cuando pincho en grises se llama a la funcion grises
+bGris.onclick = () => {
+  console.log("aplico filtro grises");
+  grises();
+}
+
 
 console.log("Fin...");
 
