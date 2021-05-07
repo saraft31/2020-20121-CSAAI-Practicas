@@ -45,16 +45,16 @@ image2.onclick = () => {
 //Función de retrollamada de imagen cargada
 //una vez pinchado en la imagen la cargo en el canvas 
 img1.onload = function(){
-    canvas.width = 450;
-    canvas.height = 300;
+    canvas.width = img1.width;
+    canvas.height = img1.height;
     ctx.drawImage(img1, 0, 0);
     console.log("Imagen1 ready");
     deslizadores1();
   };
 
 img2.onload = function(){
-    canvas.width = 450;
-    canvas.height = 300;
+    canvas.width = img2.width;
+    canvas.height = img2.height;
     ctx.drawImage(img2, 0, 0);
     console.log("Imagen2 ready");
     deslizadores2();
