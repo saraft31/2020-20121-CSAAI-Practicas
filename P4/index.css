@@ -1,15 +1,42 @@
 /*holo*/
 /*ajustes de fondo*/
 body{
-    font-family: 'Rapscallion';
     
+    text-align: center;
     background-image: url(fondo1.jpg);
     background: cover;
     background-size: cover;
+    column-count: 2;
 }
+
 @font-face{
     font-family: 'Rapscallion';
     src: url("RAPSCALL.TTF");
+}
+@font-face{
+    font-family: 'BlackChancery';
+    src: url("BLKCHCRY.TTF");
+}
+
+/*botones*/
+input{
+    margin-left: 20px;
+    height: 40px;
+    width: 100px;
+    font-family: 'BlackChancery';
+    font-weight: bolder;
+    color:black;
+    border-radius: 20px;
+    border-color: rgb(22, 122, 2);
+    background-color: rgb(93, 155, 82);
+}
+input:hover{
+    background-color: rgb(141, 224, 127);
+}
+
+/*primer boton*/
+#colores{
+    margin-left: 90px;
 }
 
 /*tamaño imagenes*/
@@ -21,10 +48,28 @@ body{
 }
 
 div{
-    column-count: 2;
+    
     font-size: 40px;
 }
 
 p{
     font-size: 20px;
+    font-family: 'BlackChancery';
 }
+
+/*manipulada*/
+#title{
+    font-family: 'BlackChancery';
+    margin-bottom: 10px;
+}
+
+/*deslizadores*/
+#sliders{
+    font-family: 'BlackChancery';
+}
+
+/*fotos de la izq para las calveritas*/
+.fotos{
+    font-family: 'Rapscallion';
+}
+
