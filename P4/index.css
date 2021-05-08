@@ -20,9 +20,9 @@ body{
 
 /*botones*/
 input{
-    margin-left: 20px;
+    margin-left: 10px;
     height: 40px;
-    width: 100px;
+    width: 120px;
     font-family: 'BlackChancery';
     font-weight: bolder;
     color:black;
@@ -36,7 +36,7 @@ input:hover{
 
 /*primer boton*/
 #colores{
-    margin-left: 90px;
+    margin-left: 70px;
 }
 
 /*imagenes*/
@@ -70,13 +70,15 @@ p{
 /*manipulada*/
 #title{
     font-family: 'BlackChancery';
-    margin-bottom: 10px;
 }
 
 /*deslizadores*/
 #sliders{
+    margin-left: 120px;
     font-family: 'BlackChancery';
 }
+
+
 
 /*fotos de la izq para las calveritas*/
 .fotos{
@@ -88,4 +90,5 @@ canvas{
     border-color: rgb(22, 122, 2);
     border-width: 2px;
     border-radius: 5px;
+    margin-top: 10px;
 }

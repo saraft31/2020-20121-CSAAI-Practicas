@@ -42,11 +42,10 @@ test.onload = function(){
   canvas.height = test.height;
   ctx.drawImage(test, 0,0);
 };
-
+img = img1;
 //Selección de imágenes
 //cuando pinchas en una imagen
 image1.onclick = () => {
-
     console.log("Imagen 1");
     img1.style.border="rgb(22, 122, 2) 4px solid";
     img2.style.border="black 2px solid";
