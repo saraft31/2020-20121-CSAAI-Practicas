@@ -19,6 +19,10 @@ const desAzul = document.getElementById('azul');
 const bGris = document.getElementById('grises');
 const bColores = document.getElementById('colores');
 const bNegativo= document.getElementById('negativo');
+const bInvertir= document.getElementById('invertir');
+
+const bHorizontal= document.getElementById('horizontal');
+const bVertical= document.getElementById('vertical');
 
 //-- Valor de los deslizadores
 const value_rojo = document.getElementById('valueR');
@@ -27,7 +31,7 @@ const value_azul = document.getElementById('valueB');
 
 //oculto los deslizadores inicialmente
 document.getElementById('sliders').style.display = 'none';
-
+document.getElementById('invertidores').style.display = 'none';
 
 //imagen de antes 
 var test = new Image(450,300);
@@ -44,21 +48,21 @@ test.onload = function(){
 image1.onclick = () => {
 
     console.log("Imagen 1");
-    img1.style.border="coral 4px solid";
+    img1.style.border="rgb(22, 122, 2) 4px solid";
     img2.style.border="black 2px solid";
     img1.src="pp.jpg";
     document.getElementById('sliders').style.display = 'none';
 }
 image2.onclick = () => {
     console.log("Imagen 2");
-    img2.style.border="coral 4px solid";
+    img2.style.border="rgb(22, 122, 2) 4px solid";
     img1.style.border="black 2px solid";
     img2.src="ww.jpg";
     document.getElementById('sliders').style.display = 'none';
 }
 
 //Función de retrollamada de imagen cargada
-//una vez pinchado en la imagen la cargo en el canvas 
+//una vez pinchado en la imagen la cainvertidoresrgo en el canvas 
 img1.onload = function(){
     img = img1 ;
     canvas.width = img1.width;
@@ -79,6 +83,7 @@ img2.onload = function(){
     
 };
 
+//filtro de los colores
 function filtroColores(data){
   var umbralR = desRojo.value;
   var umbralG = desVerde.value;
@@ -97,7 +102,7 @@ function filtroColores(data){
     }
 }
 
-
+//funcion para cuando manejo los deslizadores
 function deslizadores(){
   
   ctx.drawImage(img, 0,0); //retrollamada de los deslizadores
@@ -132,7 +137,12 @@ function deslizadores(){
     ctx.putImageData(imgData, 0, 0);
   }
 }
-
+ //para que se desplieguen los deslizadores
+ bColores.onclick = () => {
+  ctx.drawImage(img, 0,0);
+  console.log("activo deslizadores");
+  document.getElementById('sliders').style.display = 'block';
+}
 
 //funcion para poner la imagen en grises
 function grises(){
@@ -154,11 +164,7 @@ bGris.onclick = () => {
   document.getElementById('sliders').style.display = 'none';
   grises();
 }
- //para que se desplieguen los deslizadores
-bColores.onclick = () => {
-  console.log("activo deslizadores");
-  document.getElementById('sliders').style.display = 'block';
-}
+
 
 //funcion para negativo
 function negativo(){
@@ -174,13 +180,30 @@ function negativo(){
   }
   ctx.putImageData(imgData, 0,0);
 }
-
+//pincho en el botón negativo
 bNegativo.onclick = () =>{
   console.log("aplico filtro negativo");
   document.getElementById('sliders').style.display = 'none';
   negativo();
 }
 
+
+bInvertir.onclick = () =>{
+  console.log("despliego botones de inversión");
+  document.getElementById('invertidores').style.display = 'block';
+ 
+}
+//función invertir horizontal
+function invertirH(){
+  ctx.drawImage(img, 0,0);
+  ctx.translate(2*(img.width)/2,0);
+  ctx.scale(-1,1);
+  ctx.drawImage(img, 0,0);
+}
+bHorizontal.onclick = () =>{
+  console.log("invierto imagen de forma horizontal");
+  invertirH()
+}
 
 console.log("Fin...");
 

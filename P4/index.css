@@ -42,7 +42,7 @@ input:hover{
 /*imagenes*/
 #image1{
     border: solid;
-    border-color: coral;
+    border-color: rgb(22, 122, 2);
     border-width: 2px;
     border-radius: 5px;
     width: 450px; height: 300px;
@@ -52,7 +52,7 @@ input:hover{
 #image2{
     width: 450px; height: 300px;
     border: solid;
-    border-color: coral;
+    border-color: rgb(22, 122, 2);
     border-width: 2px;
     border-radius: 5px;
 }
@@ -85,7 +85,7 @@ p{
 
 canvas{
     border: solid;
-    border-color: coral;
+    border-color: rgb(22, 122, 2);
     border-width: 2px;
     border-radius: 5px;
 }
