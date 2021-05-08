@@ -42,12 +42,17 @@ test.onload = function(){
 //Selección de imágenes
 //cuando pinchas en una imagen
 image1.onclick = () => {
+    
     console.log("Imagen 1");
+    img1.style.border="coral 4px solid";
+    img2.style.border="black 2px solid";
     img1.src="pp.jpg";
     document.getElementById('sliders').style.display = 'none';
 }
 image2.onclick = () => {
     console.log("Imagen 2");
+    img2.style.border="coral 4px solid";
+    img1.style.border="black 2px solid";
     img2.src="ww.jpg";
     document.getElementById('sliders').style.display = 'none';
 }
