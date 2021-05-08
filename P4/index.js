@@ -187,7 +187,7 @@ bNegativo.onclick = () =>{
   negativo();
 }
 
-
+//funciones para invertir 
 bInvertir.onclick = () =>{
   console.log("despliego botones de inversión");
   document.getElementById('invertidores').style.display = 'block';
@@ -200,10 +200,22 @@ function invertirH(){
   ctx.scale(-1,1);
   ctx.drawImage(img, 0,0);
 }
+function invertirV(){
+  ctx.drawImage(img, 0,0);
+  ctx.translate(0,2*(img.height)/2);
+  ctx.scale(1,-1);
+  ctx.drawImage(img, 0,0);
+}
 bHorizontal.onclick = () =>{
   console.log("invierto imagen de forma horizontal");
-  invertirH()
+  invertirH();
 }
+bVertical.onclick = () =>{
+  console.log("invierto imagen de forma vertical");
+  invertirV();
+}
+
+
 
 console.log("Fin...");
 
