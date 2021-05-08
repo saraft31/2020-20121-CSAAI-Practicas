@@ -18,6 +18,7 @@ const desAzul = document.getElementById('azul');
 //Constantes de los botones
 const bGris = document.getElementById('grises');
 const bColores = document.getElementById('colores');
+const bNegativo= document.getElementById('negativo');
 
 //-- Valor de los deslizadores
 const value_rojo = document.getElementById('valueR');
@@ -181,12 +182,32 @@ bGris.onclick = () => {
   document.getElementById('sliders').style.display = 'none';
   grises();
 }
-
+ //para que se desplieguen los deslizadores
 bColores.onclick = () => {
   console.log("activo deslizadores");
   document.getElementById('sliders').style.display = 'block';
 }
 
+//funcion para negativo
+function negativo(){
+  //--Obtener la imagen del canvas en pixeles
+  let imgData = ctx.getImageData(0,0,canvas.width, canvas.height);
+  //--Obtener el array con todos los píxeles
+  let data = imgData.data;
+  for (let i = 0; i < data.length; i+=4) {
+    //--Calcular RGB complementario
+    data[i] = 255 - data[i];
+    data[i+1] = 255 - data[i+1];
+    data[i+2] = 255 - data[i+2];
+  }
+  ctx.putImageData(imgData, 0,0);
+}
+
+bNegativo.onclick = () =>{
+  console.log("aplico filtro negativo");
+  document.getElementById('sliders').style.display = 'none';
+  negativo();
+}
 
 
 console.log("Fin...");
