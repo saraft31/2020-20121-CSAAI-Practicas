@@ -42,7 +42,7 @@ test.onload = function(){
 //Selección de imágenes
 //cuando pinchas en una imagen
 image1.onclick = () => {
-    
+
     console.log("Imagen 1");
     img1.style.border="coral 4px solid";
     img2.style.border="black 2px solid";
@@ -60,23 +60,24 @@ image2.onclick = () => {
 //Función de retrollamada de imagen cargada
 //una vez pinchado en la imagen la cargo en el canvas 
 img1.onload = function(){
+    img = img1 ;
     canvas.width = img1.width;
     canvas.height = img1.height;
     ctx.drawImage(img1, 0, 0);
     console.log("Imagen1 ready");
-    deslizadores1();
+    deslizadores();
     
   };
 
 img2.onload = function(){
+    img= img2 ;
     canvas.width = img2.width;
     canvas.height = img2.height;
     ctx.drawImage(img2, 0, 0);
     console.log("Imagen2 ready");
-    deslizadores2();
+    deslizadores();
     
 };
-
 
 function filtroColores(data){
   var umbralR = desRojo.value;
@@ -97,13 +98,13 @@ function filtroColores(data){
 }
 
 
-function deslizadores1(){
+function deslizadores(){
   
-  ctx.drawImage(img1, 0,0); //retrollamada de los deslizadores
+  ctx.drawImage(img, 0,0); //retrollamada de los deslizadores
   
   desRojo.oninput = () => {
     value_rojo.innerHTML = desRojo.value;//muestro el nuevo valor del deslizador
-    ctx.drawImage(img1, 0,0); //Situo la imagen 1 en el canvas
+    ctx.drawImage(img, 0,0); //Situo la imagen 1 en el canvas
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);//Obtener la imagen del canvas en pixeles
     let data = imgData.data; //Obtener el array con todos los píxeles
     filtroColores(data); // Obtener el umbral del rojo según del deslizador
@@ -113,7 +114,7 @@ function deslizadores1(){
 
   desVerde.oninput = () => {
     value_verde.innerHTML = desVerde.value;
-    ctx.drawImage(img1, 0,0);
+    ctx.drawImage(img, 0,0);
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     let data = imgData.data
     //-- Obtener el umbral del del deslizador
@@ -123,7 +124,7 @@ function deslizadores1(){
 
   desAzul.oninput = () => {
     value_azul.innerHTML = desAzul.value;
-    ctx.drawImage(img1, 0,0);
+    ctx.drawImage(img, 0,0);
     let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     let data = imgData.data;
     //-- Obtener el umbral del azul del deslizador
@@ -132,40 +133,6 @@ function deslizadores1(){
   }
 }
 
-function deslizadores2(){
-  
-  ctx.drawImage(img2, 0,0); //retrollamada de los deslizadores
-  
-  desRojo.oninput = () => {
-    value_rojo.innerHTML = desRojo.value;//muestro el nuevo valor del deslizador
-    ctx.drawImage(img2, 0,0); //Situo la imagen 1 en el canvas
-    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);//Obtener la imagen del canvas en pixeles
-    let data = imgData.data; //Obtener el array con todos los píxeles
-    filtroColores(data); // Obtener el umbral del rojo según del deslizador
-    //Insertar imagen modificada en el canvas
-    ctx.putImageData(imgData, 0, 0);
-  }
-
-  desVerde.oninput = () => {
-    value_verde.innerHTML = desVerde.value;
-    ctx.drawImage(img2, 0,0);
-    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    let data = imgData.data
-    //-- Obtener el umbral del del deslizador
-    filtroColores(data);
-    ctx.putImageData(imgData, 0, 0);
-  }
-
-  desAzul.oninput = () => {
-    value_azul.innerHTML = desAzul.value;
-    ctx.drawImage(img2, 0,0);
-    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    let data = imgData.data;
-    //-- Obtener el umbral del azul del deslizador
-    filtroColores(data);
-    ctx.putImageData(imgData, 0, 0);
-  }
-}
 
 //funcion para poner la imagen en grises
 function grises(){
