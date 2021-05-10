@@ -34,6 +34,7 @@ document.getElementById('sliders').style.display = 'none';
 document.getElementById('invertidores').style.display = 'none';
 
 //imagen de antes 
+//empezamos con la imagen 1 aunq hay que seleecionarla para empezar
 var test = new Image(450,300);
 test.src = 'pp.jpg';
 
@@ -61,7 +62,7 @@ image2.onclick = () => {
 }
 
 //Función de retrollamada de imagen cargada
-//una vez pinchado en la imagen la cainvertidoresrgo en el canvas 
+//una vez pinchado en la imagen la cargo en el canvas 
 img1.onload = function(){
     img = img1 ;
     canvas.width = img1.width;
@@ -141,6 +142,7 @@ function deslizadores(){
   ctx.drawImage(img, 0,0);
   console.log("activo deslizadores");
   document.getElementById('sliders').style.display = 'block';
+  document.getElementById('invertidores').style.display = 'none';
 }
 
 //funcion para poner la imagen en grises
@@ -161,6 +163,7 @@ function grises(){
 bGris.onclick = () => {
   console.log("aplico filtro grises");
   document.getElementById('sliders').style.display = 'none';
+  document.getElementById('invertidores').style.display = 'none';
   grises();
 }
 
@@ -183,12 +186,14 @@ function negativo(){
 bNegativo.onclick = () =>{
   console.log("aplico filtro negativo");
   document.getElementById('sliders').style.display = 'none';
+  document.getElementById('invertidores').style.display = 'none';
   negativo();
 }
 
 //funciones para invertir 
 bInvertir.onclick = () =>{
   console.log("despliego botones de inversión");
+  document.getElementById('sliders').style.display = 'none';
   document.getElementById('invertidores').style.display = 'block';
  
 }
@@ -199,12 +204,14 @@ function invertirH(){
   ctx.scale(-1,1);
   ctx.drawImage(img, 0,0);
 }
+//función invertir vertical
 function invertirV(){
   ctx.drawImage(img, 0,0);
   ctx.translate(0,2*(img.height)/2);
   ctx.scale(1,-1);
   ctx.drawImage(img, 0,0);
 }
+//cuando pincho en cada noton de invertir
 bHorizontal.onclick = () =>{
   console.log("invierto imagen de forma horizontal");
   invertirH();
