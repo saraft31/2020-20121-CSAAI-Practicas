@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(190, 133, 255);
+}
+
+input{
+    background-color: rgba(76, 28, 88, 0.493);
+    background-position: center;
+    color: rgb(255, 255, 0);
+    border-radius: 10px;
+    border: 10px black;
+    padding: 6px;
+    padding-left: 15px; /*relleno*/
+    padding-right: 15px;
+    font-family: 'Courier';
+    font-size: 30px;
+    margin-left: 10px;
+
+}
+input:hover{
+    background-color: rgba(44, 16, 51, 0.493);
+}
+
+#directo{
+    margin-left: 475px;
+    margin-top: 10px;
+}
+
+#video1{
+    margin-left: 380px;
+    margin-top: 10px;
+}
+
+#boton_video1{
+    margin-left: 410px;
+}
+#boton_on{
+    margin-left: 400px;
+}
+
