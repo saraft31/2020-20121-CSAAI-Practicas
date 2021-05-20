@@ -1,6 +1,8 @@
 //----- Obtener elemento de video y configurarlo
 let directo = document.getElementById("directo");
 const video1 = document.getElementById("video1");
+const video2 = document.getElementById("video2");
+const video3 = document.getElementById("video3");
 const btn_video1 = document.getElementById("btn_video1");
 const btn_test = document.getElementById("btn_test");
 const btn_src_on = document.getElementById("btn_src_on");
@@ -13,18 +15,21 @@ video1.width=200;
 video1.height=100;
 
 //-- Imagen de Test usada
-const TEST_IMAGE_URL = "test.jpg";
+const TEST_IMAGE_URL = "text.jpg";
 
 //-- Imagen estática a mostrar cuando el video no
 //-- ha arrancado
 directo.poster = TEST_IMAGE_URL;
 video1.poster = TEST_IMAGE_URL;
+video2.poster = TEST_IMAGE_URL;
+video3.poster = TEST_IMAGE_URL;
 
 //-- Boton de FUENTES-ON
 btn_src_on.onclick = () => {
  
   //-- Establecer la fuente de la cámara 1
-  video1.src="https://github.com/saraft31/VIDEOS/blob/main/video1.mp4";
+  video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
+  
 
   //-- Reprodeucimos un vídeo, desde el comienzo
   video1.currentTime = 0;
