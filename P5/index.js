@@ -13,7 +13,7 @@ video1.width=200;
 video1.height=100;
 
 //-- Imagen de Test usada
-const TEST_IMAGE_URL = "test.png";
+const TEST_IMAGE_URL = "test.jpg";
 
 //-- Imagen estática a mostrar cuando el video no
 //-- ha arrancado
@@ -24,7 +24,7 @@ video1.poster = TEST_IMAGE_URL;
 btn_src_on.onclick = () => {
  
   //-- Establecer la fuente de la cámara 1
-  video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
+  video1.src="https://github.com/saraft31/VIDEOS/blob/main/video1.mp4";
 
   //-- Reprodeucimos un vídeo, desde el comienzo
   video1.currentTime = 0;
