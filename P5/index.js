@@ -13,6 +13,10 @@ directo.width=420;
 directo.height=200;
 video1.width=200;  
 video1.height=100;
+video2.width=200;  
+video2.height=100;
+video3.width=200;  
+video3.height=100;
 
 //-- Imagen de Test usada
 const TEST_IMAGE_URL = "text.jpg";
@@ -29,11 +33,17 @@ btn_src_on.onclick = () => {
  
   //-- Establecer la fuente de la cámara 1
   video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
+  video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
+  video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
   
 
   //-- Reprodeucimos un vídeo, desde el comienzo
   video1.currentTime = 0;
   video1.play();
+  video2.currentTime = 0;
+  video2.play();
+  video3.currentTime = 0;
+  video3.play();
 
   //-- Y en silencio...
   video1.muted;
@@ -52,6 +62,22 @@ btn_test.onclick = () => {
 btn_video1.onclick = () => {
     directo.src = video1.src;
     directo.currentTime = video1.currentTime;
+    directo.play();
+    directo.poster=null;
+};
+
+// Botón de Selección de la cámara 2
+btn_video2.onclick = () => {
+    directo.src = video2.src;
+    directo.currentTime = video2.currentTime;
+    directo.play();
+    directo.poster=null;
+};
+
+// Botón de Selección de la cámara 3
+btn_video3.onclick = () => {
+    directo.src = video3.src;
+    directo.currentTime = video3.currentTime;
     directo.play();
     directo.poster=null;
 };
