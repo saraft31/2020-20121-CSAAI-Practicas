@@ -1,7 +1,15 @@
 body {
     background-color: rgb(190, 133, 255);
 }
-
+h1{
+    text-align: center;
+    background-color: rgba(76, 28, 88, 0.493);
+    font-family: 'Courier';
+    color: rgb(255, 255, 0);
+    border-radius: 10px;
+    margin-left: 480px;
+    margin-right: 480px;
+}
 input{
     background-color: rgba(76, 28, 88, 0.493);
     background-position: center;
