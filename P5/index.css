@@ -1,23 +1,30 @@
 body {
     background-color: rgb(190, 133, 255);
 }
+
+@font-face{
+    font-family: "Gabriel Weiss' Friends Font";
+    src: url("GABRWFFR.TTF");
+}
 h1{
     text-align: center;
     background-color: rgba(76, 28, 88, 0.493);
-    font-family: 'Courier';
-    color: rgb(255, 255, 0);
+    font-family: "Gabriel Weiss' Friends Font";
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 2px rgb(255, 238, 0);
     border-radius: 10px;
-    margin-left: 480px;
-    margin-right: 480px;
-    
+    margin-left: 400px;
+    margin-right: 400px;
+    padding: 8px;
     
 }
 input{
     background-color: rgba(76, 28, 88, 0.493);
     background-position: center;
     color: rgb(255, 255, 0);
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
     border-radius: 10px;
-    border: 10px black;
+    border:  black;
     padding: 6px;
     padding-left: 15px; /*relleno*/
     padding-right: 15px;
