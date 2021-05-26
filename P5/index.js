@@ -64,10 +64,10 @@ boton_on.onclick = () => {
 
 boton_off.onclick = () => {
 
-    video1.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente1.mp4";
-    video2.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4";
-    video3.src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4";
-
+    video1.src="https://github.com/saraft31/VIDEOS/raw/main/video1.mp4";
+    video2.src="https://github.com/saraft31/VIDEOS/raw/main/video2.mp4";
+    video3.src="https://github.com/saraft31/VIDEOS/raw/main/video3.mp4";
+    
     directo.poster = TEST_IMAGE_URL;
     
     directo.src = null;
@@ -88,24 +88,30 @@ boton_test.onclick = () => {
 
 //-- Botón de Selección de la cámara 1
 boton_video1.onclick = () => {
+    video1.play();
     directo.src = video1.src;
     directo.currentTime = video1.currentTime;
     directo.play();
     directo.poster=null;
+    
 };
 
 // Botón de Selección de la cámara 2
 boton_video2.onclick = () => {
+    video2.play();
     directo.src = video2.src;
     directo.currentTime = video2.currentTime;
-    directo.play();
     directo.poster=null;
+    directo.play();
+
 };
 
 // Botón de Selección de la cámara 3
 boton_video3.onclick = () => {
+    video3.play();
     directo.src = video3.src;
     directo.currentTime = video3.currentTime;
     directo.play();
     directo.poster=null;
+    
 };
